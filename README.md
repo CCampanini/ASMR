@@ -18,7 +18,7 @@ Currently, terms describing the sampling equipment apply to visual-based marine 
 Here, we present preliminary ASMR reporting checklist and term list. **Collaborations and community feedbacks** for its refinement and possible upgrades are welcome and can be submitted as [issues](https://github.com/CCampanini/ASMR/issues) or by email c.campanini@pm.univpm.it.
 
 ## 🌊 USE STUDIES
-ASMR was tested by compiling the reporting checklist and metadata table *a posteriori* for 3 marine studies https://github.com/CCampanini/ASMR/tree/main/Case_studies
+ASMR was tested by compiling the reporting checklist and metadata table *a posteriori* for 3 marine studies as [use cases](https://github.com/CCampanini/ASMR/tree/main/Use_cases)
 
 ---
 
