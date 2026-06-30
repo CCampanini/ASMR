@@ -1,0 +1,2473 @@
+id: https://w3id.org/asmr
+
+name: asmr_adaptable_standardized_methods_reporting
+
+title: ASMR – Adaptable Standardized Methods Reporting
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  asmr: https://w3id.org/asmr/
+  dwc: http://rs.tdwg.org/dwc/terms/
+  eco: http://rs.tdwg.org/eco/terms/
+  dcterms: http://purl.org/dc/terms/
+  MIxS: https://w3id.org/mixs/
+
+default_prefix: asmr
+
+imports:
+  - linkml:types
+
+classes:
+  Project:
+    attributes:
+      recordedBy:
+        description: A list (concatenated and separated) of names of people responsible
+          for the submitted dataset (e.g. eDNA) or dwc:Occurrence
+        annotations:
+          annotations:
+            value:
+          source:
+            value: DwC
+        slot_uri: https://dwc.tdwg.org/list/#dwc_recordedBy
+        examples:
+          - value: José E. Crespo
+        range: string
+        required: true
+        exact_mappings:
+          - https://dwc.tdwg.org/list/#dwc_recordedBy
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      recordedByID:
+        description: A list (concatenated and separated) of the globally unique identifier
+          for the people responsible for the submitted dataset or dwc:Occurrence
+        annotations:
+          annotations:
+            value:
+          source:
+            value: DwC
+        slot_uri: https://dwc.tdwg.org/list/#dwc_recordedByID
+        examples:
+          - value: https://orcid.org/0000-0002-1825-0097
+          - value: https://orcid.org/0000-0002-1825-0098
+        range: string
+        exact_mappings:
+          - https://dwc.tdwg.org/list/#dwc_recordedByID
+        close_mappings: []
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      project_contact:
+        description: A contact person and their contact (i.e., email address) for data enquiry
+        annotations:
+          source:
+            value: Fair eDNA
+          slot_uri:
+            value: NA
+        examples:
+          - value: xxxx@yyyy.com
+        range: string
+        required: true
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      institutionID:
+        description: An identifier for the institution having custody of the object(s)
+          or information referred to in the record. This identifier should point to
+          a persistent, resolvable identifier, such as a Research Organization Registry
+          (ROR) ID or ISNI (International Standard Name Identifier).
+        annotations:
+          annotations:
+            value:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/institutionID
+        examples:
+          - value: https://ror.org/042r9xb17
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/institutionID
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      projectTitle:
+        description: Name of the project within which the sequencing was organized
+        annotations:
+          annotations:
+            value:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/projectTitle
+        examples:
+          - value: Forest soil metagenome
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/projectTitle
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      projectID:
+        description: A brief, concise project identifier with no spaces or special
+          characters, ensuring machine readability. This ID will be used in data file
+          names as 'project_id'.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: https://w3id.org/nmdc/project_id
+        examples:
+          - value: noaa-aoml-gomecc4
+        range: string
+        required: true
+        exact_mappings:
+          - https://w3id.org/nmdc/project_id
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      parent_project_id:
+        description: An identifier or name of the overarching (parent) project that
+          encompasses and organizes multiple related sub-projects, each identified
+          by a unique project_id
+        annotations:
+          source:
+            value: Fair eDNA
+          slot_uri:
+            value: not_available
+        examples:
+          - value: noaa-aoml-gomecc
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Data management:
+    attributes:
+      license:
+        description: A legal document giving official permission to do something with
+          the resource.
+        annotations:
+          source:
+            value: Dublin Core
+        slot_uri: http://purl.org/dc/terms/license
+        examples:
+          - value: http://creativecommons.org/licenses/by/4.0/legalcode
+        range: string
+        required: true
+        exact_mappings:
+          - http://purl.org/dc/terms/license
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      rightsHolder:
+        description: A person or organization owning or managing rights over the resource.
+        annotations:
+          source:
+            value: Dublin Core
+        slot_uri: http://purl.org/dc/terms/rightsHolder
+        examples:
+          - value: The Regents of the University of California
+        range: string
+        exact_mappings:
+          - http://purl.org/dc/terms/rightsHolder
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      accessRights:
+        description: Information about who can access the resource or an indication
+          of its security status.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://purl.org/dc/terms/accessRights
+        examples:
+          - value: not-for-profit use only 
+        range: string
+        exact_mappings:
+          - http://purl.org/dc/terms/accessRights
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      informationWithheld:
+        description: Additional information that exists, but that has not been shared
+          in the given record.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/informationWithheld
+        examples:
+          - value: location information not given for endangered species
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/informationWithheld
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      dataGeneralizations:
+        description: Actions taken to make the shared data (i.e. location, date) less
+          specific or complete than in its original form. Suggests that alternative
+          data of higher quality may be available on request. Note this is not related
+          to genetic generalisation within bioinformatic workflows (i.e., OTU clustering).
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/dataGeneralizations
+        examples:
+          - value: Coordinates generalized from original GPS coordinates to the nearest
+              half degree grid cell.
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/dataGeneralizations
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      bibliographicCitation:
+        description: A bibliographic reference for the resource.
+        annotations:
+          source:
+            value: Dublin Core
+        slot_uri: http://purl.org/dc/terms/bibliographicCitation
+        examples:
+          - value: 'DOI: 10.1111/mec.15382'
+        range: uriorcurie
+        exact_mappings:
+          - http://purl.org/dc/terms/bibliographicCitation
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      associated_resource:
+        description: A related resource that is referenced, cited, or otherwise associated
+          to the sequence. i.e., links to a project website, submitted raw sequence
+          data and environmental metadata.
+        annotations:
+          source:
+            value: MIxS
+        slot_uri: https://w3id.org/mixs/0000091
+        examples:
+          - value: http://www.earthmicrobiome.org/
+        range: string
+        exact_mappings:
+          - https://w3id.org/mixs/0000091
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      code_repo:
+        description: Link to public repository where analysis code is archived
+        annotations:
+          source:
+            value: NOAA
+        examples:
+          - value: https://github.com/aomlomics/gomecc
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Location:
+    attributes:
+      decimalLongitude:
+        description: The geographic longitude in decimal degrees using WGS84 datum.
+          Positive values are east of the Greenwich Meridian, negative values are
+          west of it. Legal values lie between -180 and 180, inclusive. The desired
+          minimum number of decimal places is the hundred-thousandth (0.00001) to
+          achieve meter scale resolution.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/decimalLongitude
+        examples:
+          - value: '-121.17611'
+        range: decimal
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/decimalLongitude
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      decimalLatitude:
+        description: The geographic latitude in decimal degrees using WGS84 datum.
+          Positive values are north of the Equator, negative values are south of it.
+          Legal values lie between -90 and 90, inclusive. The desired minimum number
+          of decimal places is the hundred-thousandth (0.00001) to achieve meter scale
+          resolution.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/decimalLatitude
+        examples:
+          - value: '-41.09834'
+        range: decimal
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/decimalLatitude
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimLongitude:
+        description: The original longitude in any format (i.e. deg/min/sec, UTM)
+          before converting to decimal degrees and WGS84. verbatimCoordinateSystem
+          and verbatimGeodeticDatum should be stored as well.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimLongitude
+        examples:
+          - value: 121d 10' 34" W
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimLongitude
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimLatitude:
+        description: The original latitude in any format (i.e. deg/min/sec, UTM) before
+          converting to decimal degrees and WGS84. verbatimCoordinateSystem and verbatimGeodeticDatum
+          should be stored as well.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimLatitude
+        examples:
+          - value: 41 05 54.03S
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimLatitude
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimCoordinateSystem:
+        description: The coordinate format of the verbatimLatitude and verbatimLongitude
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimCoordinateSystem
+        examples:
+          - value: degrees minutes seconds
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimCoordinateSystem
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimSRS:
+        description: The ellipsoid, geodetic datum, or spatial reference system (SRS)
+          upon which coordinates given in verbatimLatitude and verbatimLongitude,
+          or verbatimCoordinates are based.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimSRS
+        examples:
+          - value: NAD84
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimSRS
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      siteCount:
+        description: Total number of individual sites surveyed during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/siteCount
+        range: decimal
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/siteCount
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimSiteDescriptions:
+        description: Original textual description of the site(s).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimSiteDescriptions
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/verbatimSiteDescriptions
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimSiteNames:
+        description: A list (concatenated and separated) of original site names.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimSiteNames
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/verbatimSiteNames
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      geospatialScopeAreaValue:
+        description: The numeric value for the total area of the geospatial scope
+          of the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/geospatialScopeAreaValue
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/geospatialScopeAreaValue
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      geospatialScopeAreaUnit:
+        description: The units associated with geospatialScopeAreaValue
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/geospatialScopeAreaUnit
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/geospatialScopeAreaUnit
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      ecoregionScheme:
+        description: Applied ecoregion classification scheme for asmr:ecoregionName
+          and asmr:ecoregionCode
+        annotations:
+          source:
+            value: ASMR
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      ecoregionName:
+        description: Ecoregion name according to asmr:ecoregionScheme
+        annotations:
+          source:
+            value: ASMR
+        examples:
+          - value: Western Mediterranean Sea
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      ecoregionCode:
+        description: Ecoregion code associated to asmr:ecoregionName according to
+          asmr:ecoregionScheme
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 25035
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      standardGeographicFeatureClassification:
+        description: If not present in the list, specify "Other:"
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Marine Gazetteer (Claus et al., 2014)
+          - value: GEBCO Gazetteer of Undersea Feature Names (IHO-IOC, https://www.ngdc.noaa.gov/gazetteer)
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      standardGeographicFeatureValue:
+        description: representation of real world phenomenon associated with a location
+          relative to the Earth
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimLithology:
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimGeomorphologicalContext:
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      physiographicContext:
+        description: Physiographical features as defined by the  ISGM Physiography
+          vocabulary
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: abyss
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      geomorphologicalContext:
+        description: Major geomorphic and structural characteristics of the coast
+          and seafloor
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      geomorphologyClassificationScheme:
+        description: Classification scheme used to define asmr:geomorphologicalContext,
+          asmr:physiographicContext
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 'ISGM Seabed geomorphology - Part 1 Morphology Vocabulary https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology '
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimProtectionMeasures:
+        description: 'Any protection measures or restriction in place in the sampling
+          sites as reported in text. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: NA
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      protectedAreaOrOECM:
+        description: 'If applicable, protection level applying an appropriate classification
+          scheme, e.g. the Classification System for Marine Protected Areas '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: NA
+        range: string
+        exact_mappings: []
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimHabitat:
+        description: 'Habitat as described in text. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: coralligenous wall dominated by Paramuricea clavata
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      habitatClassificationScheme:
+        description: Habitat classification scheme used to specify asmr:standardHabitatValue,
+          eco:targetHabitatScope, and eco:excludedHabitatScope
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Interpretation Manual of Marine Habitat Types in the Mediterranean
+              Sea (UNEP-MAP RAC/SPA, 2021)
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      standardHabitatValue:
+        description: Habitat(s) present at the samplingSite according to asmr:habitatClassificationScheme.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: MC1.514b Facies with Alcyonacea (e.g. Eunicella spp., Leptogorgia
+              spp., Paramuricea spp., Corallium rubrum)
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      standardFaciesValue:
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimSubstrate:
+        description: Substrate as described in text. Recommended best practice is
+          to use a controlled vocabulary and separate multiple values in a list with
+          space vertical bar space ( | )
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      standardSubstrateOrigin:
+        description: 'Origin of the substrate(s) present at the samplingSite according
+          to asmr:substrateClassificationScheme. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      standardSubstrateClass:
+        description: 'Substrate(s) present at the samplingSite according to asmr:substrateClassificationScheme. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      standardSubstrateSubclass:
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      standardSubstrateGroup:
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      substrateClassificationScheme:
+        description: Substrate classification scheme used to define asmr:standardSubstrate,
+          asmr:substrateScope, asmr:excludedSubstrateScope
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: EUNIS Modified Folk Triangle (Evans et al., 2016)
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Event:
+    attributes:
+      eventDate:
+        description: 'The date and time of sampling, either as an instance (single
+          point in time) or interval. Must follow ISO 8601 format (yyyy-mm-ddThh:mm:ss).
+          Time zone must be specified after the timestamp (e.g., "2008-01-23T19:23-06:00"
+          in the time zone six hours earlier than UTC, "2008-01-23T19:23Z" at UTC
+          time). In case no exact time is available, the date/time can be right truncated
+          i.e. all of these are valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10Z;
+          2008-01-23; 2008-01; 2008; Except: 2008-01; 2008 all are ISO8601 compliant.
+          A date and time range can be specified using a forward slash (/) to separate
+          the start and end values (e.g., 2008-01-23T19:23-06:00/2008-01-23T19:53-06:00).
+          A duration can also be provided using the eventDurationValue term.'
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/eventDate
+        examples:
+          - value: 2008-01-23T19:23-06:00
+        range: datetime
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/eventDate
+          - https://w3id.org/mixs/0000011
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      eventDurationValue:
+        description: 'The duration of the sampling event, written in ISO 8601 format
+          (i.e., P1DT3H for 1 day and 3 hours period. P1Y6M for 1 year and 6 months
+          period. T30M/45M for some time between 30 and 45 minutes). '
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/eventDurationValue
+        examples:
+          - value: T1H25M
+        range: datetime
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/eventDurationValue
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      eventDurationUnit:
+        description: The units associated with the eco:eventDurationValue.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/eventDurationUnit
+        examples:
+          - value: 'minutes
+
+            hours
+
+            days
+
+            months
+
+            years'
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/eventDurationUnit
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimEventDate:
+        description: Sample collection date before formatting
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimEventDate
+        examples:
+          - value: 23-January-2008
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimEventDate
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimEventTime:
+        description: Sample collection time before formatting to ISO 8601, or at the
+          local time (if eventDate time samp has been converted to UTC time)
+        annotations:
+          source:
+            value: Fair eDNA
+          slot_uri:
+            value: not_available
+        examples:
+          - value: '10:23'
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Scope:
+    attributes:
+      targetHabitatScope:
+        description: 'The habitat targeted for sampling during the dwc:Event. '
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetHabitatScope
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetHabitatScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      standardTargetHabitatScope:
+        description: habitat should be defined according to the asmr:habitatClassificationScheme. If no specific substrate, specify "No".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      excludedHabitatScope:
+        description: The habitats explicitly excluded from sampling during the dwc:Event.  If
+          possible, habitat should be defined according to the asmr:habitatClassificationScheme
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedHabitatScope
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedHabitatScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      substrateScope:
+        description: The substrate targeted for sampling during the dwc:Event defined
+          according to the asmr:substrateClassificationScheme.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      excludedSubstrateScope:
+        description: The substrate(s) explicitly excluded from sampling during the dwc:Event  defined according to the asmr:substrateClassificationScheme.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      targetTaxonomicScope:
+        description: The taxonomic group(s) targeted for sampling during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetTaxonomicScope
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetTaxonomicScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      excludedTaxonomicScope:
+        description: The taxonomic group(s) explicitly excluded from sampling during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedTaxonomicScope
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedTaxonomicScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      taxonCompletenessReported:
+        description: Statement about whether the taxonomic completeness of the dwc:Event
+          was assessed.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/taxonCompletenessReported
+        examples:
+          - value: 'notReported
+
+            reportedComplete
+
+            reportedIncomplete'
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/taxonCompletenessReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      isTaxonomicScopeFullyReported:
+        description: Every dwc:Organism that was included within the taxonomic scope, and was detected during the dwc:Event, was reported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isTaxonomicScopeFullyReported
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isTaxonomicScopeFullyReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      isAbsenceReported:
+        description: Taxonomic absences were reported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isAbsenceReported
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isAbsenceReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      absentTaxa:
+        description: A list (concatenated and separated) of taxa reported absent during
+          the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/absentTaxa
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/absentTaxa
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      hasNonTargetTaxa:
+        description: One or more dwc:Organisms of taxa outside the target taxonomic
+          scope (the combination of eco:targetTaxonomicScope and eco:excludedTaxonomicScope)
+          were detected and reported for this dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/hasNonTargetTaxa
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/hasNonTargetTaxa
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      nonTargetTaxa:
+        description: A list (concatenated and separated) of taxa reported during the
+          dwc:Event that are outside of the target taxonomic scope (the combination
+          of eco:targetTaxonomicScope and eco:excludedTaxonomicScope).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/nonTargetTaxa
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/nonTargetTaxa
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      areNonTargetTaxaFullyReported:
+        description: Every dwc:Organism that was outside of the target taxonomic scope (the combination of eco:targetTaxonomicScope and eco:excludedTaxonomicScope)
+          and detected during the dwc:Event, and that was detectable using the given protocol (given in eco:protocolDescriptions and dwc:samplingProtocol),
+          was reported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/areNonTargetTaxaFullyReported
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/areNonTargetTaxaFullyReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      targetLifeStafeScope:
+        description: The age classes or life stages of the dwc:Organisms targeted
+          for sampling during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetLifeStageScope
+        examples:
+          - value: larva
+          - value: adult
+          - value: juvenile
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetLifeStageScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      excludedLifeStageScope:
+        description: The age classes or life stages of the dwc:Organisms explicitly
+          excluded from sampling during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedLifeStageScope
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedLifeStageScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      isLifeStageScopeFullyReported:
+        description: Every dwc:Organism that was included within the life stage scope,
+          and was detected during the dwc:Event, was reported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isLifeStageScopeFullyReported
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isLifeStageScopeFullyReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      targetDegreeOfEstablishmentScope:
+        description: The degrees of establishment of the dwc:Organisms targeted for
+          sampling during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetDegreeOfEstablishmentScope
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetDegreeOfEstablishmentScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      excludedDegreeOfEstablishmentScope:
+        description: The degrees of establishment of the dwc:Organisms explicitly excluded from sampling during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedDegreeOfEstablishmentScope
+        examples:
+          - value: native
+          - value: invasive
+          - value: widespreadInvasive
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedDegreeOfEstablishmentScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      isDegreeOfEstablishmentScopeFullyReported:
+        description: Every dwc:Organism that was included within the degree of establishment scope, and was detected during the dwc:Event, was reported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isDegreeOfEstablishmentScopeFullyReported
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isDegreeOfEstablishmentScopeFullyReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      targetGrowthFormScope:
+        description: The growth forms or habits of the dwc:Organisms targeted for
+          sampling during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetGrowthFormScope
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetGrowthFormScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      excludedGrowthFormScope:
+        description: The growth forms or habits of the dwc:Organisms explicitly excluded
+          from sampling during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedGrowthFormScope
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedGrowthFormScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      isGrowthFormScopeFullyReported:
+        description: Every dwc:Organism that was included within the growth form
+          scope, and was detected during the dwc:Event, was reported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isGrowthFormScopeFullyReported
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isGrowthFormScopeFullyReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      hasNonTargetOrganisms:
+        description: One or more dwc:Organisms outside the target organismal scopes
+          (eco:targetDegreeOfEstablishmentScope, eco:targetGrowthFormScope, and eco:targetLifeStageScope)
+          were detected and reported for this dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/hasNonTargetOrganisms
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/hasNonTargetOrganisms
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimTargetScope:
+        description: The verbatim original description of the dwc:Event scope.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimTargetScope
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/verbatimTargetScope
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      taxonCompletenessProtocols:
+        description: A description of or reference (publication, URL) to the methods
+          used to determine eco:taxonCompletenessReported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/iri/taxonCompletenessProtocols
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/iri/taxonCompletenessProtocols
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Sampling materials:
+    attributes:
+      samplingPlatform:
+        description: Physical person or device/machine conducting fieldwork sampling
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        required: true
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      samplingPlatformModel:
+        description: Model of the sampling platform adopted for fieldwork. Separate
+          multiple values in a list with space vertical bar space ( | )
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Ocean Robotics Njord ROV
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      divingGasMix:
+        description: If asmr:samplingPlatform included "open-circuit SCUBA" or "close-circuit rebreathers" or "semi-closed rebreathers" specify the diving gas mix, if necessary differentiating between bottom and decompression gases
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Bottom gas Trimix 21/35 | Decompression gas O50
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      positioningSystem:
+        description: 'System for the tracking and navigation of underwater vehicles
+          or divers by means of acoustic distance and/or direction measurements, and
+          subsequent position triangulation. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Blueprint SeaTrac USBL Positioning System
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      image-scale-reference:
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        examples:
+          - value: 3D camera, calibrated camera, laser marker, optical flow
+        range: string
+        exact_mappings: []
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      sizeReferenceSystem:
+        description: Size reference system is used for size estimation in visual-based
+          surveys
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 2 green laser beams (OrcaTorch D560-GL) set 10 cm apart
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      lightSystem:
+        description: Separate multiple values in a list with space vertical bar space
+          ( | )
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      cameraSystem:
+        description: Model of the camera(s) used for eco:protocolDescriptions
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Olympus Tough! TG6 with Isotta underwater housing
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      image-camera-orientation*:
+        description: Inclination of the camera with respect to the substrate expressed in degrees, e.g. if perpendicular,  fill with "90"
+        annotations:
+          source:
+            value: Durden et al., 2024
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      batterySystem:
+        description: Battery system adopted for the sampling platform
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      sensors:
+        description: Specify sensor(s) the sampling platform is equipped with or that
+          have been used in the sampling design. Recommended best practice is to use
+          a controlled vocabulary and separate multiple values in a list with space
+          vertical bar space ( | )
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: CTD | light sensors
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      sensorsCalibration:
+        description: 'Protocol adopted for sensor calibration. Refer to the manual
+          / source if available. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      pelagicORbenthicBaitedPlatform:
+        description: 'If a baited platform is adopted, specify whether it is a pelagic
+          or benthic platform. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      bait:
+        description: 'Bait equipped to the baited platform. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: chopped European sardine Sardina pilchardus
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      baitQuantity:
+        description: 'Quantity of the bait equipped to the baited platform expressed
+          in kg. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: '1'
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      manipulatorArms:
+        description: Specify if the sampling platform is equipped with manipulator arms for manipulative experiments or sample collection. If absent, set "No".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: boolean
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      sampleContainer:
+        description: Specify if the sampling platform is equipped with a sample container, e.g. voucher specimens container for ROVs. If absent, set "No".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      otherFaunaAttraction:
+        description: Specify if any other fauna attraction device/tool was equipped
+          to the baited platform. If absent, mark "No".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      armLength:
+        description: 'Baited platform arm length in m. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      canisterModel:
+        description: 'Model of the canister of the baited platform. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Sampling Design:
+    attributes:
+      surveyType:
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      compilationTypes:
+        description: A statement specifying whether data reported are derived from
+          sampling events, ancillary data compiled from other sources, or a combination
+          of both.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/compilationTypes
+        examples:
+          - value: 'samplingEvents'
+          - value: 'compilationOfExistingSourcesAndSamplingEvents'
+          - value: 'compilationOfExistingSources'
+          - value: 'compilationOfExistingSourcesAndSamplingEvents | compilationOfExistingSources'
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/compilationTypes
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      compilationSourceTypes:
+        description: The types of data sources contributing to the compilation reported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/compilationSourceTypes
+        examples:
+          - value: museumSpecimens
+          - value: literature
+          - value: expertKnowledge
+          - value: localKnowledge
+          - value: webKnowledge
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/compilationSourceTypes
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      inventoryTypes:
+        description: The types of search processes used to conduct the inventory.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/inventoryTypes
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/inventoryTypes
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      isAbundanceReported:
+        description: The number of dwc:Organisms collected or observed was reported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isAbundanceReported
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isAbundanceReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      isAbundanceCapReported:
+        description: A maximum number of dwc:Organisms was reported, as specified
+          or restricted by the protocol used.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isAbundanceCapReported
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isAbundanceCapReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      abundanceCap:
+        description: The reported maximum number of dwc:Organisms.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/abundanceCap
+        range: decimal
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/abundanceCap
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      isLeastSpecificTargetCategoryQuantityInclusive:
+        description: The total detected quantity for a dwc:Taxon (including subcategories
+          thereof) in a dwc:Event is given explicitly in a single record (dwc:organismQuantity
+          value) for that dwc:Taxon.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isLeastSpecificTargetCategoryQuantityInclusive
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isLeastSpecificTargetCategoryQuantityInclusive
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      isSamplingEffortReported:
+        description: The sampling effort associated with the dwc:Event was reported.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isSamplingEffortReported
+        range: boolean
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isSamplingEffortReported
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      samplingEffortValue:
+        description: 'The numeric value for the sampling effort expended during the
+          dwc:Event. '
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/samplingEffortValue
+        range: decimal
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/samplingEffortValue
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      samplingEffortUnit:
+        description: The units associated with the eco:samplingEffortValue. Sampling
+          unit can be expressed in terms of surface, e.g. for transects, or soaking
+          time for stationary platforms.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/samplingEffortUnit
+        examples:
+          - value: Linear transect
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/samplingEffortUnit
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      samplingEffortProtocol:
+        description: A description of or reference (publication or URL) to the methods
+          used to determine the sampling effort.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/samplingEffortProtocol
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/samplingEffortProtocol
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      excludedSamplingEffortUnit:
+        description: Number of sampling unit excluded from analysis.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      excludedSamplingEffortUnitRationale:
+        description: If any sample was excluded, explain the rationale, e.g. blurred
+          photo or specimen with head structures.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      protocolNames:
+        description: Categorical descriptive names for the methods used during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/protocolNames
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/protocolNames
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      protocolDescriptions:
+        description: A detailed description of the methods used during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/protocolDescriptions
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/protocolDescriptions
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      protocolReferences:
+        description: The references to the methods used during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/protocolReferences
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/protocolReferences
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      validationProtocolDescription:
+        description: A detailed description of any validation protocol adopted to
+          reduce measurements biases.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: the footage was analyzed twice by two researchers and results were
+              compared reaching consensus on the ones here presented.
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      siteCount:
+        description: Site refers to the location at which observations are made or samples/measurements are taken. The site can be at any level of hierarchy.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/siteCount
+        range: decimal
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/siteCount
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      siteNestingDescription:
+        description: 'Textual description of the hierarchical sampling design. '
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/siteNestingDescription
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/siteNestingDescription
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimSiteDescription:
+        description: 'Original textual description of the site(s).
+
+          Comments: Site refers to the location at which observations are made or
+          samples/measurements are taken. The site can be at any level of hierarchy.
+          Recommended best practice is to separate multiple values in a list with
+          space vertical bar space ( | ).'
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimSiteDescriptions
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/verbatimSiteDescriptions
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      verbatimSiteNames:
+        description: 'A list (concatenated and separated) of original site names.
+
+          Comments: Site refers to the location at which observations are made or
+          samples/measurements are taken. The site can be at any level of hierarchy.
+          Recommended best practice is to separate multiple values in a list with
+          space vertical bar space ( | ).'
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimSiteNames
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/verbatimSiteNames
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      totalAreaSampledValue:
+        description: The numeric value for the total area surveyed during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/totalAreaSampledValue
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/totalAreaSampledValue
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      totalAreaSampledUnit:
+        description: The units associated with eco:totalAreaSampledValue
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/totalAreaSampledUnit
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/totalAreaSampledUnit
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      analyzedAreaValue:
+        description: The numeric value of the area included for quantitative analysis
+          that can be equal to or a subset of the total area surveyed during the dwc:Event.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      analyzedAreaUnit:
+        description: The units associated with asmr:analyzedAreaValue
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      fieldOfView:
+        description: 'For visual-based survey, field of view of the platform expressed
+          in m^2. '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      navigationSpeed:
+        description: Platform navigation speed expressed in m/s
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      reportedWeather:
+        description: A list of weather or climatic conditions present during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/reportedWeather
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/reportedWeather
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      reportedExtremeConditions:
+        description: A description of any extreme weather or environmental conditions
+          that may have affected the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/reportedExtremeConditions
+        examples:
+          - value: 'flooding during week 3 of surveys
+
+            rockslide at site 2'
+        range: string
+        required: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/reportedExtremeConditions
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      spatialReplicates:
+        description: Boolean field to specify whether spatial replicates were included
+          in the sampling design (e.g. multiple transects or photoquadrats)
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: true or false
+        range: boolean
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      temporalReplicates:
+        description: Boolean field to specify whether temporal replicates were included
+          in the sampling design
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: true or false
+        range: boolean
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      temporalScale:
+        description: If asmr:temporalReplicates = true, specify the time span in
+          years.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      minimumSurveyedDepth:
+        description: 'Minimum surveyed depth expressed in metres '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        required: true
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      maximumSurveyedDepth:
+        description: 'Maximum surveyed depth expressed in metres '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        required: true
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      minimumAnalyzedDepth:
+        description: 'Minimum surveyed depth whose samples were included in descriptive
+          or quantitative analyses expressed in metres '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      maximumAnalyzedDepth:
+        description: 'Maximum surveyed depth whose samples were included in descriptive
+          or quantitative analyses expressed in metres '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      surveyedTime:
+        description: Time for samplingEffortUnit, e.g. navigation for time-based transect
+          or soak time for stationary sampling platforms) expressed in minutes
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      analyzedTime:
+        description: Time subset of asmr:surveyedTime that was included in descriptive
+          or quantitative analyses expressed in minutes.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      maximumDistanceAboveSurfaceInMeters:
+        description: The greater distance in a range of distance from a reference
+          surface in the vertical direction, in meters. Use positive values for locations
+          above the surface, negative values for locations below. If depth measures
+          are given, the reference surface is the location given by the depth, otherwise
+          the reference surface is the location given by the elevation.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters
+        range: decimal
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Risk assessment and prevention measures:
+    attributes:
+      protocolRisks:
+        description: 'Risks related to the protocol described in eco:protocolDescriptions '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      protocolPreventionMeasures:
+        description: Any prevention measure against the risk specified in asmr:protocolRisks
+          associated with the sampling protocol described in eco:protocolDescriptions.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Cost analysis:
+    attributes:
+      costPerCostAnalysisUnit:
+        description: Cost expressed in asmr:costAnalysisCurrency per asmr:costAnalysisUnit
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: '1056'
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      costAnalysisCurrency:
+        description: Currency used to express asmr:costPerUnit, asmr:equipmentCostPerUnit,
+          and asmr:personnelCostPerUnit
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: '11'
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      costAnalysisUnit:
+        description: 'Define a unit for the cost analysis of the described eco:protocolDescriptions '
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: m^2 ; per transplant; per site
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      personnelCostPerUnit:
+        description: Personnel cost per unit as specified in asmr:costAnalysisUnit
+          expressed in asmr:costAnalysisCurrency
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      equipmentCostPerUnit:
+        description: Equipment cost per unit as specified in asmr:costAnalysisUnit
+          expressed in asmr:costAnalysisCurrency.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: decimal
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Material collected:
+    attributes:
+      hasVouchers:
+        description: Specimen vouchers were collected during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/hasVouchers
+        range: boolean
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/hasVouchers
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      voucherInstitutions:
+        description: A list (concatenated and separated) of the names or acronyms
+          of the institutions where vouchers collected during the dwc:Event were deposited.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/voucherInstitutions
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/voucherInstitutions
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      hasMaterialSamples:
+        description: Material samples were collected during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/hasMaterialSamples
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/hasMaterialSamples
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      materialSampleTypes:
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/materialSampleTypes
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/materialSampleTypes
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      biological_rep:
+        description: The number of biological replicates collected at each sampling
+          point and/or for each experimental treatment in the study.
+        annotations:
+          source:
+            value: Fair eDNA
+          slot_uri:
+            value: not_available
+        examples:
+          - value: '5'
+        range: integer
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Digital sample:
+    attributes:
+      image-area-square-meters:
+        annotations:
+          source:
+            value: IFDO
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      image-resolution:
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        range: string
+        exact_mappings: []
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      image-overlap-fraction:
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        range: string
+        exact_mappings: []
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      image-science-use-cases:
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        range: string
+        exact_mappings: []
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      image-camera-calibration-model:
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        range: string
+        exact_mappings: []
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      image-item-identification-scheme:
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        range: string
+        exact_mappings: []
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      image-curation-protocol:
+        description: Details of image processing / curation applied. References required
+          should be listed in image-documentation-processing
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        range: string
+        exact_mappings: []
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      image-photometric-calibration:
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        range: string
+        exact_mappings: []
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Sample relations:
+    attributes:
+      materialSampleID:
+        description: An identifier for the physical sample (as opposed to the extracted
+          DNA sample defined by samp_name). In the absence of a persistent global
+          unique identifier, construct one from a combination of identifiers in the
+          record.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/materialSampleID
+        examples:
+          - value: GOMECC4_27N_Sta1_Deep
+        range: string
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/materialSampleID
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+  Parameters:
+    attributes:
+      inSituAbioticParametersCollected:
+        description: Abiotic parameters collected in situ during fieldwork.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Water temperature
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      inSituAbioticlParametersAnalyzed:
+        description: Abiotic parameters collected in situ during fieldwork and included
+          in analyses (e.g. satellite-derived data)
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Water temperature
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      exSituAbioticParametersAnalyzed:
+        description: Abiotic parameters collected ex situ and included in analyses
+          (e.g. satellite-derived data)
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Chlorophyll-a concentration
+          - value: Turbidity
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
+      ecologicalParameters:
+        range: string
+        exact_mappings: [ ]
+        close_mappings: [ ]
+        related_mappings: [ ]
+        narrow_mappings: [ ]
+        broad_mappings: [ ]
