@@ -13,7 +13,7 @@ Adaptable Standardized Methods Reporting (ASMR) for marine fieldowork **is being
 The reporting checklist was developed guide the report/manuscript writing and reviewers, while the schema and metadta template to standardize metadata compilation, respectively. The terms in the schema were when possible imported from established controlled vocabularies or standard, most from the Darwin Core and Humboldt Extensions. New terms were defined for sampling context and methodology (see image below). 
 Currently, terms describing the sampling equipment apply to visual-based marine platforms (divers, ROVs, BRUVs,...), but further implementations of ASMR include its expansion to cover other sampling platforms (e.g. acoustic techniques) and other environments (freshwater and terrestrial). 
 
-<img width="1507" height="775" alt="image" src="https://github.com/user-attachments/assets/c07f06d1-2c6f-4585-8cb3-3069e942b1dc" />
+<img width="13333" height="7500" alt="ASMR_APPLICATIONS_DIAGRAM" src="https://github.com/user-attachments/assets/c1362933-37aa-4086-9f80-9bbe82f08ceb" />
 
 ## 👥🌍 COMMUNITY FEEDBACK & CONTRIBUTIONS
 Here, we present preliminary ASMR reporting checklist and term list. **Collaborations and community feedbacks** for its refinement and possible upgrades are welcome and can be submitted as [issues](https://github.com/CCampanini/ASMR/issues) or by email c.campanini@pm.univpm.it.
