@@ -1,0 +1,4850 @@
+id: https://w3id.org/asmr
+
+name: asmr_adaptable_standardized_methods_reporting
+
+title: ASMR - Adaptable Standardized Methods Reporting
+
+prefixes:
+  ac: http://rs.tdwg.org/ac/terms/
+  asmr: https://w3id.org/asmr/
+  BODCParameterUsage: http://vocab.nerc.ac.uk/collection/P01/current/
+  BODCParameterSemantic: http://vocab.nerc.ac.uk/collection/S18/current/
+  cmecs: https://w3id.org/CMECS/
+  dcterms: http://purl.org/dc/terms/
+  DSInitiativeTypeCode: http://vocab:nerc:ac:uk/collection/G07/current/
+  dwc: http://rs.tdwg.org/dwc/terms/
+  eco: http://rs.tdwg.org/eco/terms/
+  efo: http://www.ebi.ac.uk/efo/
+  eLTER_CL: http://vocabs.lter-europe.net/elter_cl/
+  esmo: http://purl.obolibrary.org/obo/esmo.owl
+  iFDOCapture: https://ifdo-schema.org/standard/v2.2.1/documentation/iFDO-capture/
+  iFDOContent: https://www:ifdo-schema:org/standard/v2:2:1/documentation/iFDO-content/
+  iFDOCore: https://ifdo-schema.org/standard/v2.2.1/documentation/iFDO-core/
+  ISGMMethods: https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/
+  LifecycleEventType: http://rdf-vocabulary:ddialliance:org/cv/LifecycleEventType/1:0:2/
+  linkml: https://w3id.org/linkml/
+  marineregions: http://marineregions.org/
+  MarineRegionsOntology: http://marineregions.org/ns/ontology
+  MIxS: https://w3id.org/mixs/
+  movebank: http://vocab.nerc.ac.uk/collection/MVB/current/
+  nmcd: https://w3id.org/nmdc/
+  obo: http://purl.obolibrary.org/obo/
+  PATO: http://purl.obolibrary.org/obo/
+  qudtUnit: http://qudt.org/vocab/unit/
+  SeaDataNetParameterDiscoveryVocabulary: http://vocab.nerc.ac.uk/collection/P02/current/
+  SimpleLithology: http://resource.geosciml.org/classifier/cgi/lithology/
+  tern: https://w3id.org/tern/ontologies/tern/Sensor
+  TRAITSTHES: https://kos:lifewatch:eu/thesauri/
+  xmp: http://ns.adobe.com/xap/1.0/
+
+default_prefix: asmr
+
+imports:
+  - linkml:types
+
+classes:
+  ASMRMetadata:
+    attributes:
+      dataLifeCycleStageAtCompilation:
+        alias: Data Life Cycle Stage at Compilation
+        description: >-
+          Data life cycle stage at compilation of the current version of ASMR metadata table
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary.
+        annotations:
+          source:
+            value: asmr
+          slot_uri:
+            value: to_Create
+        examples:
+          - value: Study design [http://rdf-vocabulary.ddialliance.org/cv/LifecycleEventType/1.0.2/8e4ba08]
+          - value: Data collection [http://rdf-vocabulary.ddialliance.org/cv/LifecycleEventType/1.0.2/8e4ba08]
+          - value: Data Processing [http://rdf-vocabulary.ddialliance.org/cv/LifecycleEventType/1.0.2/552cf53]
+          - value: A posteriori data harmonization
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-30
+        last_updated_on: 2026-07-30
+      version:
+        alias: Version
+        description: >-
+          ASMR metadata table version
+        comments: >-
+          Metadata Editors can associate different version coding, e.g. corresponding to the different data life stage
+          at compilation.
+        annotations:
+          source:
+            value: asmr
+          slot_uri:
+            value: to_Create
+        examples:
+          - value: 1.0
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-30
+        last_updated_on: 2026-07-30
+      MetadataDate:
+        alias: Metadata Date
+        description: >-
+          The date and time that any metadata for this resource was last changed.
+        comments: >-
+          Point in time recording when the last modification to metadata (not necessarily the media object itself)
+          occurred. The date and time MUST comply with the World Wide Web Consortium (W3C) datetime practice,
+          https://www.w3.org/TR/NOTE-datetime, which requires that date and time representation correspond to
+          ISO 8601:1998, but with year fields always comprising 4 digits. This makes datetime records compliant
+          with 8601:2004, https://www.iso.org/standard/40874.html. AC datetime values MAY also follow 8601:2004
+          for ranges by separating two IS0 8601 datetime fields by a solidus ("forward slash", '/').
+        annotations:
+          source:
+            value: xmp
+          slot_uri:
+            value: http://ns.adobe.com/xap/1.0/MetadataDate
+        examples:
+          - value: 2026-07-30T15:23Z
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - xmp:MetadataDate
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-31
+        last_updated_on: 2026-07-31
+      metadataCreator:
+        alias: Metadata Creator
+        description: A URI representing a person or organization originally creating the resource metadata record.
+        comments: >-
+          The person or organization originally creating the resource metadata record (irrespectively of its format)
+          do not have to be necessarily the involved in the compilation of the ASMR metadata table, the person or
+          organization involved in the compilation is specified with ac:metadataProvider. Recommended best practice is
+          to separate the values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Audiovisual Core Term List
+        slot_uri: http://rs.tdwg.org/ac/terms/metadataCreator
+        examples:
+          - value: https://orcid.org/0000-0002-0260-8373
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - ac:metadataCreator
+        close_mappings: []
+        related_mappings:
+          - LifecycleEventType:71dfa2a
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-31
+        last_updated_on: 2026-07-30
+      metadataCreatorLiteral:
+        alias: Metadata Creator Literal
+        description: >-
+          Name of the person or organization originally creating the resource metadata record.
+        comments: >-
+          The person or organization originally creating the resource metadata record (irrespectively of its format)
+          do not have to be necessarily the involved in the compilation of the ASMR metadata table, the person or
+          organization involved in the compilation is specified with ac:metadataProvider. Recommended best practice is
+          to separate the values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Audiovisual Core Term List
+        slot_uri: http://rs.tdwg.org/ac/terms/metadataCreatorLiteral
+        examples:
+          - value: Torcuato Pulido Mantas
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - ac:metadataCreatorLiteral
+        close_mappings: []
+        related_mappings:
+          - LifecycleEventType:71dfa2a
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-31
+        last_updated_on: 2026-07-31
+      metadataProvider:
+        alias: Metadata Provider
+        description: URI of person or organization originally responsible for providing the resource metadata record.
+        comments: >-
+          Metadata Provider(s), i.e. people/organization compiling the ASMR metadata table do not have to be
+          involved directly in the metadata generation and/or data generation or analysis and can be external to the
+          project during which data were collected. The involvement of the Metadata Provider should be specified in
+          asmr:metadataProviderInvolvementInDataLifeCycle. Recommended best practice is to separate the values in a
+          list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Audiovisual Core Term List
+        slot_uri: http://rs.tdwg.org/ac/terms/metadataProvider
+        examples:
+          - value: https://orcid.org/0009-0007-2258-2469
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - ac:metadataProvider
+        close_mappings: []
+        related_mappings:
+          - LifecycleEventType:86d7722
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-30
+        last_updated_on: 2026-07-30
+      metadataProviderLiteral:
+        alias: Metadata Provider Literal
+        description: >-
+          Name of the person or organization originally responsible for providing the resource metadata record.
+        comments: >-
+          Metadata Provider(s), i.e. people/organization compiling the ASMR metadata table do not have to be
+          involved directly in the metadata generation and/or data generation or analysis and can be external to the
+          project during which data were collected. The involvement of the Metadata Provider should be specified in
+          asmr:metadataProviderInvolvementInDataLifeCycle. Recommended best practice is to separate the values in a
+          list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Audiovisual Core Term List
+        slot_uri: http://rs.tdwg.org/ac/terms/metadataProviderLiteral
+        examples:
+          - value: Veronica Marchesi
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - ac:metadataProviderLiteral
+        close_mappings: []
+        related_mappings:
+          - LifecycleEventType:86d7722
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-30
+        last_updated_on: 2026-07-30
+      metadataProviderInvolvementInDataLifeCycle:
+        alias: Metadata Provider Involvement in Data Life Cycle
+        description: >-
+          Involvement of the ac:metadataProvider compiling ASMR metadata table during data life cycle
+        comments: >-
+          Recommended best practice is to separate the values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: asmr
+          slot_uri:
+            value: to_Create
+        examples:
+          - value: >-
+              Study design [http://rdf-vocabulary.ddialliance.org/cv/LifecycleEventType/1.0.2/8e4ba08] |
+              Data collection [http://rdf-vocabulary.ddialliance.org/cv/LifecycleEventType/1.0.2/8e4ba08]
+          - value: Data processing
+          - value: External (no involvement in data generation/processing)
+        range: string [http://rdf-vocabulary.ddialliance.org/cv/LifecycleEventType/1.0.2/552cf53]
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-30
+        last_updated_on: 2026-07-30
+  Project:
+    attributes:
+      recordedBy:
+        alias: Recorded By
+        description: A list (concatenated and separated) of names of people responsible for the submitted dataset
+          (e.g. eDNA) or dwc:Occurrence
+        comments: >-
+          Recommended best practice is to separate the values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: DwC
+        slot_uri: https://dwc.tdwg.org/list/#dwc_recordedBy
+        examples:
+          - value: Claudia Campanini
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - https://dwc.tdwg.org/list/#dwc_recordedBy
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      recordedByID:
+        alias: Recorded By ID
+        description: >-
+          A list (concatenated and separated) of the globally unique identifier
+          for the people responsible for the submitted dataset or dwc:Occurrence
+        comments: >-
+          Recommended best practice is to separate the values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/recordedByID
+        examples:
+          - value: https://orcid.org/0000-0002-1825-0097
+          - value: https://orcid.org/0000-0002-1825-0098
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/recordedByID
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      projectContact:
+        alias: Project Contact
+        description: >-
+          A contact person and their contact (i.e., email address) for data enquiry
+        comments: []
+        annotations:
+          source:
+            value: Fair eDNA
+          slot_uri:
+            value: NA
+        examples:
+          - value: xxxx@yyyy.com
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      institutionCode:
+        alias: Institution Code
+        description: A name (or acronym) in use by an institution having custody of a resource.
+        comments: The institution having ownership of a resource should be given in dwc:ownerInstitutionCode.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/institutionCode
+        examples:
+          - value: UNIVPM
+          - value: Universitat de Barcelona
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/institutionCode
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      institutionID:
+        alias: Institution ID
+        description: >-
+          An identifier for the institution having custody of the object(s) or information referred to in the record.
+          This identifier should point to a persistent, resolvable identifier, such as a Research Organization Registry
+          (ROR) ID or ISNI (International Standard Name Identifier).
+        comments: []
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/institutionID
+        examples:
+          - value: https://ror.org/042r9xb17
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/institutionID
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      projectTitle:
+        alias: Project Title
+        description: Name of the project within which the sequencing was organized
+        comments: >-
+          Use this term to provide the official name or title of a project as it is commonly known and cited.
+          Avoid abbreviations unless they are widely understood. The recommended best practice is to separate the
+          values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/projectTitle
+        examples:
+          - value: Forest soil metagenome
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/projectTitle
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      projectID:
+        alias: Project ID
+        description: A brief, concise project identifier with no spaces or special
+          characters, ensuring machine readability. This ID will be used in data file
+          names as 'project_id'.
+        comments: >
+          A projectID may be shared in multiple distinct datasets.
+          The nature of the association can be described in the metadata project description element.
+          This term should be used to provide a globally unique identifier (GUID) for a project, if available.
+          This could be a DOI, URI, or any other persistent identifier that ensures a project can be uniquely
+          distinguished from others. Recommended best practice is to separate the values in a list with space
+          vertical bar space ( | ).
+        annotations:
+          source:
+            value: DwC
+        slot_uri: https://w3id.org/nmdc/project_id
+        examples:
+          - value: noaa-aoml-gomecc4
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - https://w3id.org/nmdc/project_id
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      parentProjectID:
+        alias: Parent Project ID
+        description: >-
+          An identifier or name of the overarching (parent) project that encompasses and organizes multiple
+          related sub-projects, each identified by a unique project_id
+        comments: []
+        annotations:
+          source:
+            value: Fair eDNA
+          slot_uri:
+            value: not_available
+        examples:
+          - value: noaa-aoml-gomecc
+        range: string
+        required: false
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  DataManagement:
+    attributes:
+      license:
+        alias: License
+        description: >-
+          A legal document giving official permission to do something with the resource.
+        comments: []
+        annotations:
+          source:
+            value: Dublin Core
+        slot_uri: http://purl.org/dc/terms/license
+        examples:
+          - value: http://creativecommons.org/licenses/by/4.0/legalcode
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://purl.org/dc/terms/license
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      rightsHolder:
+        alias: Rights Holder
+        description: A person or organization owning or managing rights over the resource.
+        comments: []
+        annotations:
+          source:
+            value: Dublin Core
+        slot_uri: http://purl.org/dc/terms/rightsHolder
+        examples:
+          - value: The Regents of the University of California
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://purl.org/dc/terms/rightsHolder
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      accessRights:
+        alias: Access Rights
+        description: Information about who can access the resource or an indication of its security status.
+        comments: >-
+          Access Rights may include information regarding access or restrictions based on privacy, security,
+          or other policies.
+        annotations:
+          source:
+            value: Dublin Core
+        slot_uri: http://purl.org/dc/terms/accessRights
+        examples:
+          - value: not-for-profit use only
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://purl.org/dc/terms/accessRights
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      informationWithheld:
+        alias: Information Withheld
+        description: >-
+          Additional information that exists, but that has not been shared in the given record.
+        comments: []
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/informationWithheld
+        examples:
+          - value: location information not given for endangered species
+        range: string
+        required: false
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/informationWithheld
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      dataGeneralizations:
+        alias: Data Generalization
+        description: >-
+          Actions taken to make the shared data (i.e. location, date) less specific or
+          complete than in its original form. Suggests that alternative data of higher quality may
+          be available on request. Note this is not related to genetic generalisation within bioinformatic
+          workflows (i.e., OUT clustering).
+        comments: []
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/dataGeneralizations
+        examples:
+          - value: Coordinates generalized from original GPS coordinates to the nearest
+              half degree grid cell.
+        range: string
+        required: false
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/dataGeneralizations
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      bibliographicCitation:
+        alias: Bibliographic Citation
+        description: A bibliographic reference for the resource.
+        comments: >-
+          From Dublin Core, "Recommended practice is to include sufficient bibliographic detail to identify
+          the resource as unambiguously as possible." The intended usage of this term in ASMR metadata checklist
+          is the same as in Darwin Core, i.e.  is to provide the preferred way to cite the resource itself -
+          "how to cite this record". Note that the intended usage of dcterms:references in Darwin Core,
+          by contrast, is to point to the definitive source representation of the resource -
+          "where to find the as-close-to-original reference", if one is available.
+        annotations:
+          source:
+            value: Dublin Core
+        slot_uri: http://purl.org/dc/terms/bibliographicCitation
+        examples:
+          - value: https://doi.org/10.1111/mec.15382
+        range: uriorcurie
+        required: false
+        recommended: false
+        exact_mappings:
+          - http://purl.org/dc/terms/bibliographicCitation
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+      associated_resource:
+        alias: Associated Resource
+        description: >-
+          A related resource that is referenced, cited, or otherwise associated
+          to the sequence. i.e., links to a project website, submitted raw sequence
+          data and environmental metadata.
+        comments: []
+        annotations:
+          source:
+            value: MIxS
+        slot_uri: https://w3id.org/mixs/0000091
+        examples:
+          - value: http://www.earthmicrobiome.org/
+        range: string
+        required: false
+        recommended: false
+        exact_mappings:
+          - https://w3id.org/mixs/0000091
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      code_repo:
+        alias: Code Repository
+        description: Link to public repository where analysis code is archived
+        comments: []
+        annotations:
+          source:
+            value: NOAA
+        examples:
+          - value: https://github.com/aomlomics/gomecc
+        range: string
+        required: false
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  Location:
+    attributes:
+      locationID:
+        alias: Location ID
+        description: >-
+          An identifier for a dcterms:Location.
+        comments: >-
+          Recommended best practice is to use a globally unique identifier (GUIDs). GUIDs can be retrieved/generated
+          for example from Marine Regions Gazetteer (http://marineregions.org/) or GeoNames (http://www.geonames.org/).
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/locationID
+        examples:
+          - value: http://marineregions.org/mrgid/4012
+          - value: https://www.geonames.org/3174307/cala-maestra.html
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - dwc:locationID
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimLocality:
+        alias: Verbatim Locality
+        description: An original textual description of a dcterms:Location.
+        comments: >-
+          Positive values are east of the Greenwich Meridian, negative values are
+          west of it. Legal values lie between -180 and 180, inclusive.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimLocality
+        examples:
+          - value: 25 km NNE Bariloche por R. Nac. 237
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      locality:
+        alias: Locality
+        description: The specific description of the place.
+        comments: >-
+          Less specific geographic information can be provided in other geographic terms (dwc:higherGeography,
+          dwc:continent, dwc:country, dwc:stateProvince, dwc:county, dwc:municipality, dwc:waterBody, dwc:island,
+          dwc:islandGroup). This term may contain information modified from the original to correct perceived errors
+          or standardize the description.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/locality
+        examples:
+          - value: 25 km NNE Bariloche por R. Nac. 237
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings:
+          - dwc:locality
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      decimalLongitude:
+        alias: Decimal Longitude
+        description: The geographic longitude in decimal degrees using WGS84 datum.
+        comments: >-
+          Positive values are east of the Greenwich Meridian, negative values are
+          west of it. Legal values lie between -180 and 180, inclusive.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/decimalLongitude
+        examples:
+          - value: -121.17611
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings:
+          - dwc:decimalLongitude
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      decimalLatitude:
+        alias: Decimal Latitude
+        description: >-
+          The geographic latitude in decimal degrees using WGS84 datum.
+        comments: >-
+          Positive values are north of the Equator, negative values are south of it.
+          Legal values lie between -90 and 90, inclusive.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/decimalLatitude
+        examples:
+          - value: -41.09834
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/decimalLatitude
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimLongitude:
+        alias: Verbatim Longitude
+        description: >-
+          The original longitude in any format (i.e. deg/min/sec, UTM)
+          before converting to decimal degrees and WGS84. verbatimCoordinateSystem
+          and verbatimGeodeticDatum should be stored as well.
+        comments: []
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimLongitude
+        examples:
+          - value: 121d 10' 34" W
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimLongitude
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimLatitude:
+        alias: Verbatim Latitude
+        description: >-
+          The original latitude in any format (i.e. deg/min/sec, UTM) before
+          converting to decimal degrees and WGS84. verbatimCoordinateSystem and verbatimGeodeticDatum
+          should be stored as well.
+        comments: []
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimLatitude
+        examples:
+          - value: 41 05 54.03S
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimLatitude
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimCoordinateSystem:
+        alias: Verbatim Coordinate System
+        description: The coordinate format of the verbatimLatitude and verbatimLongitude
+        comments: []
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimCoordinateSystem
+        examples:
+          - value: degrees minutes seconds
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimCoordinateSystem
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimSRS:
+        alias: Verbatim SRS
+        description: >-
+          The ellipsoid, geodetic datum, or spatial reference system (SRS)
+          upon which coordinates given in verbatimLatitude and verbatimLongitude,
+          or verbatimCoordinates are based.
+        comments: []
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimSRS
+        examples:
+          - value: NAD84
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimSRS
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimSiteDescriptions:
+        alias: Verbatim Site Descriptions
+        description: Original textual description of the site(s).
+        comments: >-
+          Site refers to the location at which observations are made or samples/measurements are taken.
+          The site can be at any level of hierarchy.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimSiteDescriptions
+        examples:
+          - value: >-
+              The 25-m-long punic wreck sunk approximately around the III century BC lies on a sandy bottom at
+              around 45 meters with its his higher part, corresponding to the ram, suspended at 38 m.
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/verbatimSiteDescriptions
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimSiteNames:
+        alias: Verbatim Site Names
+        description: A list (concatenated and separated) of original site names.
+        comments: >-
+          Site refers to the location at which observations are made or samples/measurements are taken.
+          The site can be at any level of hierarchy.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimSiteNames
+        examples:
+          - value: Punta del Faro | Secca Gonzatti | Punta della Torretta | Secca Isuela
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/verbatimSiteNames
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      siteCount:
+        alias: Site Count
+        description: Total number of individual sites surveyed during the dwc:Event.
+        comments: >-
+          Site refers to the location at which observations are made or samples/measurements are taken.
+          The site can be at any level of hierarchy.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/siteCount
+        range: decimal
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/siteCount
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      siteNestingDescription:
+        alias: Site Nesting Description
+        description: >-
+          Textual description of the hierarchical sampling design.
+        comments: >-
+          Site refers to the location at which observations are made or samples/measurements are taken.
+          The site can be at any level of hierarchy.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/siteNestingDescription
+        examples:
+          - value: 10 permanent quadrats at 2 depth levels (25 and 35 depth) at 4 different locations
+          - value: 3 areas (nord, center, south) with 5 sampling sites per region. 3 videotransects performed at
+              each site
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/siteNestingDescription
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-01-31
+      footprintWKT:
+        alias: Footprint WKT
+        description: >-
+          A Well-Known Text (WKT) representation of the shape (footprint, geometry) that defines a dcterms:Location.
+        comments: >-
+          A dcterms:Location may have both a point-radius representation (see dwc:decimalLatitude) and a footprint
+          representation, and they may differ from each other.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/footprintWKT
+        examples: []
+        range: string
+        required: false
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/footprintWKT
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      country:
+        alias: Country
+        description: >-
+          	The name of the country or major administrative unit in which the dcterms:Location occurs.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary such as the Getty Thesaurus of Geographic Names.
+          Recommended best practice is to leave this field blank if the dcterms:Location spans multiple entities at
+          this administrative level or if the dcterms:Location might be in one or another of multiple possible
+          entities at this level. Multiplicity and uncertainty of the geographic entity can be captured either
+          in the term dwc:higherGeography or in the term dwc:locality, or both.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimSiteNames
+        examples:
+          - value: Colombia
+          - value: Italy
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - dwc:country
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-29
+        last_updated_on: 2026-07-29
+      countryCode:
+        alias: Country Code
+        description: >-
+          The standard code for the country in which the dcterms:Location occurs.
+        comments: >-
+            Recommended best practice is to use an ISO 3166-1-alpha-2 country code, or 'ZZ' (for an unknown location
+            or a location unassignable to a single country code), or 'XZ' (for the high seas beyond national
+            jurisdictions). Multiplicity and uncertainty of the geographic entity can be captured either in the term
+            dwc:higherGeography or in the term dwc:locality, or both.
+        annotations:
+          source:
+            value: DwC
+        examples:
+          - value: Colombia
+          - value: Italy
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimSiteNames
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - dwc:countryCode
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-29
+        last_updated_on: 2026-07-29
+      ecoregionScheme:
+        alias: Ecoregion Scheme
+        description: >-
+          Standardized biogeographic framework used to categorize the Earth’s surface into distinct regions based on
+          their shared ecological characteristics.
+        comments: >-
+          This term should be used to specify the applied ecoregion classification scheme for asmr:ecoregionName and asmr:ecoregionCode.
+          If the classification scheme is a controlled vocabulary, provide the permanent identifier, if not the bibliographic citation with an identifier
+          (doi / url / ISSN / ISBN)
+        annotations:
+          source:
+            value: ASMR
+        examples:
+          - value: 'Spalding, M. D. Fox, H. E. Allen, G. R. Davidson, N. Ferdana, Z. A. Finlayson, M. Halpern, B. S. Jorge, M. A. Lombana, A. Lourie, S. A., (2007). Marine Ecoregions of the World: A Bioregionalization of Coastal and Shelf Areas. Bioscience 2007, VOL 57; numb 7, pages 573-584. doi: 10.1641/B570707, available online at https://www.worldwildlife.org/publications/marine-ecoregions-of-the-world-a-bioregionalization-of-coastal-and-shelf-areas'
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      ecoregionName:
+        alias: Ecoregion Name
+        description: >-
+          Geographically distinct area of land or water defined by its shared ecological characteristics,
+          including climate, geology, soils, hydrology, and communities.
+        comments: >-
+          Recommended best practise is to fill in with the ecoregion name according to asmr:ecoregionScheme and,
+          if present, followed by the ecoregion code as specified in the classification scheme between round brackets.
+          Separate the values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+        examples:
+          - value: Western Mediterranean Sea (25035)
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      ecoregionID:
+        alias: Ecoregion ID
+        description: >-
+          Permanent identifier of the asmr:ecoregionName according to asmr:ecoregionScheme.
+        comments: []
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: http://marineregions.org/mrgid/21896
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      geographicFeature:
+        alias: Geographic Feature
+        description: >-
+          A named spatial region or location.
+        comments: >-
+          The ID of the actual sampling/survey location(s) should be specified with dwc:locationID.
+          If the actual sampling/survey location(s) lies within or is associated to a defined geographic feature,
+          then this term can be used to specify the geographic feature providing a broader geographic context.
+          For example, if a survey occurred in a marine canyon, specify the actual dwc:locationID and the canyon name
+          asmr:geographicFeatureName. Recommended best practice is to use a controlled vocabulary, e.g. Marine Regions
+          Gazetteer (https://www.marineregions.org/gazetteer.php), providing the label followed by the identifier
+          between square brackets. Separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Barcelona Canyon [http://marineregions.org/mrgid/3947]
+          - value: Vercelli seamount [http://marineregions.org/mrgid:4012]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings:
+          - MarineRegionsOntology:#Feature
+        related_mappings: []
+        narrow_mappings:
+          - dwc:locationID
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      marineZone:
+        alias: Marine Zone
+        description: >-
+          A marine zone is a distinct spatial division of the ocean categorized by abiotic factors like depth,
+          sunlight penetration, temperature, and proximity to shore.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary providing the label followed
+          by the identifier between square brackets.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: >-
+              neritic mesopelagic zone biome [http://purl.obolibrary.org/obo/ENVO_01000043] |
+              neritic epipelagic zone biome [http://purl.obolibrary.org/obo/ENVO_01000042]
+          - value: circalittoral zone
+          - value: mesophotic benthic zone
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimGeomorphologicalContext:
+        alias: Verbatim Geomorphological Context
+        description: >-
+          Original textual description of the seabed shape.
+        comments: >-
+          This term is relevant especially, but not only, when the asmr:marineZone where fieldwork (dwc:event)
+          is performed in any asmr:marineZone of the benthic realm.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      physiographicContext:
+        alias: Physiographic Context
+        description: >-
+          Terms that are used to describe the macroscale physical expression of the seafloor (e.g. CONTINENTAL SHELF).
+        comments: >-
+          This term is relevant especially, but not only, relevant when the asmr:marineZone where fieldwork (dwc:event)
+          is performed in any asmr:marineZone of the benthic realm.
+          Recommended best practice is to use the controlled vocabulary Seabed geomorphology - Physiography
+          (https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography) providing the label followed
+          by the identifier between square brackets.
+          Separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ISGMMethods
+          slot_uri:
+            value: to_create
+        examples:
+          - value: continental slope [https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography//continental_slope]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - ISGMMethods:physiography
+        close_mappings:
+          - cmecs:CMECS_00000641
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      morphologicalContext:
+        alias: Morphological Context
+        description: >-
+          Shape of the land / seafloor surface
+        comments: >-
+          This term is relevant especially, but not only, relevant when the asmr:marineZone where fieldwork (dwc:event)
+          is performed in any asmr:marineZone of the benthic realm.
+          Recommended best practice is to use the controlled vocabulary Seabed geomorphology - Part 1 Morphology
+          (https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology) providing the label followed
+          by the identifier between square brackets.
+          Separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        examples:
+          - value: >-
+              pinnacle [https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/pinnacle]  |
+              canyon [https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/canyon]
+          - value: bank [https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/bank]
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings:
+          - ISGMMethods:morphology
+          - SeaDataNetParameterDiscoveryVocabulary:SBGE
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      geomorphologicalContext:
+        alias: Geomorphological Context
+        description: >-
+          Seabed shape
+        comments: >-
+          This term is relevant especially, but not only, relevant when the asmr:marineZone where fieldwork (dwc:event)
+          is performed in any asmr:marineZone of the benthic realm.
+          Recommended best practice is to use a controlled vocabulary, example Seabed geomorphology - Part 2
+          Geomorphology (https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings), providing the label
+          followed by the identifier between square brackets.
+          Separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        examples:
+          - value: >-
+              fringing reef [https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/fringing_reef]  |
+              submarine canyon [https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/submarine_canyon]
+          - value: bank [https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/bank]
+        required: false
+        recommended: true
+        exact_mappings:
+        close_mappings:
+          - SeaDataNetParameterDiscoveryVocabulary:SBGE/
+          - ISGMMethods:Geomorphology
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      habitat:
+        alias: Habitat
+        description: >-
+          A category or description of the habitat in which the dwc:Event occurred.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary and separate multiple values in a list with space
+          vertical bar space ( | ). The classification scheme adopted, whether or not a controlled vocabulary,
+          should be specified in asmr:habitatClassificationScheme. If the dwc:habitat was sourced from a
+          controlled vocabulary, provide the label followed by the identifier between square brackets.
+          Fill with the term that most closely describe the habitat found at the dwc:location according to
+          the habitat classification scheme specified in asmr:habitatClassificationScheme. If a precise term is
+          not available, opt for coarser (broader) levels of classification and specify the actual habitat in
+          asmr:verbatimHabitat.
+        annotations:
+          source:
+            value: Darwin Core
+          slot_uri:
+            value: http://rs.tdwg.org/dwc/terms/habitat
+        examples:
+          - value: MC1.514b Coralligenous Cliff, Facies with Alcyonacea
+          - value: http://eunis.eea.europa.eu/eunishabitats/A4.26D
+          - value: marine sponge reef biome [http://purl.obolibrary.org/obo/ENVO_01000123]
+          - value: Zostera marina Herbaceous Vegetation [https://w3id.org/CMECS/CMECS_00001322]
+          - value: Wreck [https://w3id.org/CMECS/CMECS_00000920] | Ostrea reef [https://w3id.org/CMECS/CMECS_00001166]
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - dwc:habitat
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      habitatClassificationScheme:
+        alias: Habitat Classification Scheme
+        description: >-
+          Standard often hierarchical habitat classification
+        comments: >-
+          Habitat classification scheme used to specify other terms related to the habitat, e.g.
+          asmr:standardHabitatValue, eco:targetHabitatScope, and eco:excludedHabitatScope.
+          Provide the unique identifier of the classification scheme if available, if not the most complete
+          bibliographic citation with an identifier (doi, ISSN, URL, ...).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: UNEP-MAP RAC/SPA, 2021. Interpretation Manual of Marine Habitat Types in the Mediterranean
+              Sea. https://www.rac-spa.org/meetings/nfp15/nfp_docs/inf/21wg502_inf04_en.pdf
+          - value: http://purl.obolibrary.org/obo/envo.owl
+          - value: http://eunis.eea.europa.eu/eunishabitats/
+          - value: https://w3id.org/CMECS/
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimHabitat:
+        alias: Verbatim Habitat
+        description: >-
+          Original textual description of the habitat.
+        comments: >-
+          Recommended best practice is to separate the values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Gongolaria barbata forest
+          - value: coralligenous wall dominated by Paramuricea clavata | cave
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimLithology:
+        alias: Verbatim Lithology
+        description: >-
+          Original textual description of the compound earth material of the seabed
+        comments: []
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: basaltic crust covered by siliceous ooze, mainly consisting of radiolarian ooze
+          - value: coralligenous assemblage developing on a granite subvertical wall
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      lithology:
+        alias: Lithology
+        description: >-
+          Compound earth material(s) of the seabed
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary, e.g. Simple Lithology
+          (http://resource.geosciml.org/classifier/cgi/lithology), providing the label followed by the identifier
+          between square brackets. Separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: >-
+              biogenic silica sedimentary rock
+              [http://resource.geosciml.org/classifier/cgi/lithology/biogenic_silica_sedimentary_rock] |
+              silt [http://resource.geosciml.org/classifier/cgi/lithology/silt]
+          - value: >-
+              red clay [http://purl.obolibrary.org/obo/ENVO_02000045] | granite
+              [http://purl.obolibrary.org/obo/ENVO_01000356]
+          - value: Limestone [https://w3id.org/mixs/LithologyEnum#Limestone]
+          - value: >-
+              Calcareous ooze [http://resource.geolba.ac.at/lithology/236] | Sandy lime
+              [http://resource.geolba.ac.at/lithology/235] | Basalt [http://resource.geolba.ac.at/lithology/82]
+          - value: >-
+              Carbonate sediment and sedimentary rock [http://data.bgs.ac.uk/id/EarthMaterialClass/RockClassAll/PS_CSSR]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings:
+          - SimpleLithology:compound_material
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimSubstrate:
+        alias: Verbatim Substrate
+        description: >-
+          Original textual description of the substrate(s).
+        comments: >-
+          This term is relevant especially, but not only, relevant when the asmr:marineZone where fieldwork (dwc:event)
+          is performed in any asmr:marineZone of the benthic realm.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - coral reef patch surrounded by sandy bottom and coral rubble
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      substrate:
+        alias: Substrate
+        description: >-
+          Substrate is defined as the non-living materials that form an aquatic bottom or seafloor, or that provide
+          a surface (e.g., floating objects, buoys) for growth of attached biota. Substrate may be composed of any
+          substance, natural or man-made.
+        comments: >-
+          This term is relevant especially, but not only, relevant when the asmr:marineZone where fieldwork (dwc:event)
+          is performed in any asmr:marineZone of the benthic realm.
+          Recommended best practice is to use a controlled vocabulary and separate multiple values in a list with
+          space vertical bar space ( | )
+        annotations:
+          source:
+            value: ASMR
+          definition_source:
+            value: Coastal and Marine Ecological Classification Standard (CMECS) https://w3id.org/CMECS/CMECS_00000803
+          slot_uri:
+            value: to_create
+        examples:
+          - value: >-
+              Fixed Metal Substrate [https://w3id.org/CMECS/CMECS_00000539] | Bedrock
+              [https://w3id.org/CMECS/CMECS_00000094]
+          - value: muddy bottom
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings:
+          - efo:EFO_0005061
+          - cmecs:CMECS_00000803
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      substrateOrigin:
+        alias: Substrate Origin
+        description: >-
+          Origin of the substrate(s) present at the dwc:location according to asmr:substrateClassificationScheme.
+        comments: >-
+          This term is relevant especially, but not only, relevant when the asmr:marineZone where fieldwork (dwc:event)
+          is performed in any asmr:marineZone of the benthic realm.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Biogenic substrate [https://w3id.org/CMECS/CMECS_00000101]  | Geologic substrate
+              [https://w3id.org/CMECS/CMECS_00000389]
+          - value: Anthropogenic Substrate [https://w3id.org/CMECS/CMECS_00000024]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      substrateClassificationScheme:
+        alias: Substrate Classification Scheme
+        description: >-
+          Substrate classification scheme used to define asmr:substrate, asmr:substrateScope,
+          asmr:excludedSubstrateScope
+        comments: >-
+          This term is relevant especially, but not only, relevant when the asmr:marineZone where fieldwork (dwc:event)
+          is performed in any asmr:marineZone of the benthic realm.
+          Recommended best practice is to use a controlled vocabulary and fill with the identifier, if not available
+          provide the most complete bibliographic citation with identifier (URL/ISSN/doi)
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: https://w3id.org/CMECS/
+          - value: >-
+              Evans, D., A. Aish, A. Boon, S. Conde, D. Connor, E. Gelabert, N. Michez et al. "Revising
+              the marine section of the EUNIS Habitat classification-Report of a workshop held at the European
+              Topic Centre on Biological Diversity, 12 & 13 May 2016." ETC/BD report to the EEA (2016).
+              https://doi.org/10.13140/RG.2.2.30609.94564
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimConservationMeasure:
+        alias: Verbatim Conservation Measure
+        description: >-
+          Original textual description of any conservation measures or regulation in place at the dwc:locationID
+          at the time of sampling.
+        comments: >-
+          Conservation measures should be filled by the users with no restricted values or if it is compiled
+          *a posteriori* as it is reported in text. Recommended best practice is to fill this field with "Not reported
+          if not reported in text or "No" if no conservation measure or regulation at the dwc:locationID when the
+          dwc:event occurred
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: NA
+        examples:
+          - value: bottom trawling ban
+          - value: 'MPA, established in 1999, covers an area of around 4km2, divided into three conservation zones:
+              Zone A (strict reserve), Zone B (general reserve) and Zone C (partial reserve). Entry into Zone A is only
+               permitted for surveillance, rescue, research and service operations. In Zone B, bathing, diving and
+               mooring at authorised facilities for small sailing and rowing boats are allowed.
+               Additionally, sport and professional fishing is permitted but only for residents.
+               In Zone C, all the activities allowed in Zone B are permitted, and sport fishing is not limited to
+               residents only (Salmona and Verardi 2001).'
+        required: false
+        recommended: true
+        range: string
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      areaBasedProtectionMeasure:
+        alias: Area Based Protection Measure
+        description: >-
+          Area-based conservation measure in place at the dwc:locationID at the time of sampling.
+        comments: >-
+          This term is only relevant if the dwc:Location is inside a Marine Protected Area.
+          Recommended best practice is to use a database, e.g. the World Database on Protected and Conserved Areas
+          (WDPCA, https://www.protectedplanet.net/en) or the The Marine Protection Atlas
+          (MPAtlas, https://mpatlas.org/). When available, provide the label followed by the identifier between
+          square brackets.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: NA
+        examples:
+          - value: >-
+              Del Montgrí, les Illes Medes i el Baix Ter [https://www.protectedplanet.net/555546001?site_pid=555546001]
+          - value: Area marina protetta Capo Milazzo [https://mpatlas.org/wdpa/555691182/]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      areaBasedProtectionLevelValue:
+        alias: Area Based Protection Level Value
+        description: >-
+            Level of area-based protection at the dwc:locationID at the time of sampling.
+        comments: >-
+            This term is only relevant if the dwc:Location is inside a Marine Protected Area.
+            Recommended best practice is to use a controlled vocabulary or established classification scheme, e.g. the
+            Level of Protection reported in The Marine Protection Atlas (MPAtlas). If a controlled vocabulary or
+            classification scheme is adopted, it must be specified in asmr:areaBasedProtectionLevelScheme.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: NA
+        examples:
+          - value: Fully Protected
+          - value: Highly Protected
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      areaBasedProtectionLevelScheme:
+        alias: Area Based Protection Level Scheme
+        description: >-
+          Classification scheme used to define the asmr:areaBasedProtectionLevelValue.
+        comments: >-
+          This term is only relevant if the dwc:Location is inside a Marine Protected Area.
+          Recommended best practice is to use a controlled vocabulary or established classification scheme, e.g. The
+          MPA Guide which is used to define the Level of Protection reported in The Marine Protection Atlas (MPAtlas).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: NA
+        examples:
+          - value: ©The MPA Guide 2026 https://mpa-guide.protectedplanet.net/explore/levels-of-protection/by-level
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  Event:
+    attributes:
+      survey:
+        alias: Survey
+        description: >-
+          A biotic survey or inventory.
+        comments: []
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/Survey
+        examples:
+          - value: coralligenous cliff ecological status assessment
+          - value: typhoon impact assessment
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/Survey
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      surveyID:
+        alias: Survey ID
+        description: >-
+          An identifier for an eco:Survey.
+        comments: >-
+          Recommended best practice is to use a globally unique identifier.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/surveyID
+        examples: []
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/eventDurationUnit
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      eventDate:
+        alias: Event Date
+        description: >-
+          The date and time of sampling, either as an instance (single point in time) or interval.
+        comments: >-
+          Must follow ISO 8601 format (yyyy-mm-ddThh:mm:ss). Time zone must be specified after the timestamp
+          (e.g., "2008-01-23T19:23-06:00" in the time zone six hours earlier than UTC, "2008-01-23T19:23Z" at UTC
+          time). In case no exact time is available, the date/time can be right truncated i.e. all of these are
+          valid times: 2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10Z; 2008-01-23; 2008-01; 2008; Except: 2008-01;
+          2008 all are ISO8601 compliant. A date and time range can be specified using a forward slash (/)
+          to separate the start and end values (e.g., 2008-01-23T19:23-06:00/2008-01-23T19:53-06:00).
+          A duration can also be provided using the eventDurationValue term.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/eventDate
+        examples:
+          - value: 2008-01-23T19:23-06:00
+        range: datetime
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings:
+          - http://rs.tdwg.org/dwc/terms/eventDate
+          - https://w3id.org/mixs/0000011
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      eventDurationValue:
+        alias: Event Duration Value
+        description: >-
+          The duration of the sampling event, written in ISO 8601 format (i.e., P1DT3H for 1 day and 3 hours period.
+          P1Y6M for 1 year and 6 months period. T30M/45M for some time between 30 and 45 minutes).
+        comments: >-
+          An eco:eventDurationValue must have a corresponding eco:eventDurationUnit.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/eventDurationValue
+        examples:
+          - value: T1H25M
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/eventDurationValue
+        close_mappings:
+          - eLTER_CL:10349
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      eventDurationUnit:
+        alias: Event Duration Unit
+        description: >-
+          The units associated with the eco:eventDurationValue.
+        comments: >-
+          Recommended best practice is to use SI units, derived units, or other non-SI units accepted for use within
+          the SI from a controlled vocabulary, e.g. QUDT Unit Vocabulary (http://qudt.org/vocab/unit/).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/eventDurationUnit
+        examples:
+          - value: http://qudt.org/vocab/unit/HR
+          - value: hours
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/eventDurationUnit
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimEventDate:
+        alias: Verbatim Event Date
+        description: The verbatim original representation of the date and time information for a dwc:Event.
+        comments: []
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/verbatimEventDate
+        examples:
+          - value: 23-January-2008
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/verbatimEventDate
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimEventTime:
+        alias: Verbatim Event Time
+        description: >-
+          Sample collection time before formatting to ISO 8601, or at the local time (if eventDate time samp has
+          been converted to UTC time)
+        comments: []
+        annotations:
+          source:
+            value: Fair eDNA
+          slot_uri:
+            value: not_available
+        examples:
+          - value: 10:23
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      reportedWeather:
+        alias: Reported Weather
+        description: >-
+          A list of weather or climatic conditions present during the dwc:Event.
+        comments: >-
+          Recommended best practice is to use a key:value encoding schema for a data interchange format such as JSON.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/reportedWeather
+        examples:
+          - value: >-
+              {"minimumTemperatureInDegreesCelsius": 14, "maximumTemperatureInDegreesCelsius": 26,
+              "maximumWaveHeightInMeter": 0.5, "weatherConditions": sunny}
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/reportedWeather
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      reportedExtremeConditions:
+        alias: Reported Extreme Conditions
+        description: >-
+          A description of any extreme weather or environmental conditions that may have affected the dwc:Event.
+        comments: []
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/reportedExtremeConditions
+        examples:
+          - value: flooding during week 3 of surveys
+          - value: rockslide at site 2
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/reportedExtremeConditions
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      minimumSurveyedDepth:
+        alias: Minimum Surveyed Depth
+        description: >-
+          Minimum surveyed depth expressed in metres
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples: []
+        range: decimal
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      maximumSurveyedDepth:
+        alias: Maximum Surveyed Depth
+        description: >-
+          Maximum surveyed depth expressed in metres
+        comments: []
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples: []
+        range: decimal
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      minimumAnalyzedDepth:
+        alias: Minimum Analyzed Depth
+        description: >-
+          Minimum surveyed depth whose samples were included in descriptive
+          or quantitative analyses expressed in metres
+        comments: []
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples: []
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      maximumAnalyzedDepth:
+        alias: Maximum Analyzed Depth
+        description: >-
+          Maximum surveyed depth whose samples were included in descriptive or quantitative analyses expressed
+          in metres
+        comments: []
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples: []
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      maximumDistanceAboveSurfaceInMeters:
+        alias: Maximum Distance Above Surface In Meters
+        description: >-
+          The greater distance in a range of distance from a reference surface in the vertical direction, in meters.
+          Use positive values for locations above the surface, negative values for locations below. If depth measures
+          are given, the reference surface is the location given by the depth, otherwise the reference surface is
+          the location given by the elevation.
+        comments: >-
+          For a 1.5 meter sediment core from the bottom of a lake (at depth 20m) at 300m elevation:
+          verbatimElevation: 300m minimumElevationInMeters: 300, maximumElevationInMeters: 300, verbatimDepth: 20m,
+          minimumDepthInMeters: 20, maximumDepthInMeters: 20, minimumDistanceAboveSurfaceInMeters: 0,
+          maximumDistanceAboveSurfaceInMeters: -1.5.
+        annotations:
+          source:
+            value: DwC
+        slot_uri: http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters
+        examples:
+          - value: 1.5
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  Scope:
+    attributes:
+      verbatimTargetScope:
+        alias: Verbatim Target Scope
+        description: The verbatim original description of the dwc:Event scope.
+        comments: >-
+          Recommended best practice is first to populate explicit scope terms to the fullest extent possible
+          (e.g., eco:targetTaxonomicScope). It is not recommended to use this term in assessing absence or completeness.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/verbatimTargetScope
+        examples:
+          - value: >-
+              In this context, the present study aims to characterise the coralligenous habitat in the upper
+              mesophotic zone of the Portofino Marine Protected Area (MPA; Ligurian Sea, Italy) by comparing the
+              benthic assemblages and the ALDFGs at two depths (35 and 50 m). For each ALDFG found, the type of
+              fishing gears, the taxa and the number of impacted organisms were recorded, contributing to creating
+              a baseline to assess the effects of management measures when restrictions will be hopefully applied.
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/verbatimTargetScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      geospatialScopeAreaValue:
+        alias: Geospatial Scope Area Unit
+        description: The numeric value for the total area of the geospatial scope of the dwc:Event.
+        comments: >-
+          Geospatial scope refers to the dwc:Event location reported using the terms organized in Darwin Core
+          under dcterms:Location. This area is always greater than or equal to the eco:totalAreaSampledValue.
+          An eco:geospatialScopeAreaValue must have a corresponding eco:geospatialScopeAreaUnit.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/geospatialScopeAreaValue
+        examples:
+          - value: 35
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/geospatialScopeAreaValue
+        close_mappings:
+          - eLTER_CL:10006
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      geospatialScopeAreaUnit:
+        alias: Geospatial Scope Area Unit
+        description: The units associated with geospatialScopeAreaValue
+        comments: >-
+          Recommended best practice is to use SI units, derived units, or other non-SI units accepted for use within
+          the SI from a controlled vocabulary, e.g. QUDT Unit Vocabulary (http://qudt.org/vocab/unit/). This field MUST
+          be filled if eco:geospatialScopeAreaUnit is filled.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/geospatialScopeAreaUnit
+        examples:
+          - values: >-
+              qudtUnit:M2
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/geospatialScopeAreaUnit
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      targetHabitatScope:
+        alias: Target Habitat Scope
+        description: >-
+          The habitat targeted for sampling during the dwc:Event as stated in text.
+        comments: >-
+          If there was a target habitat than it is required, if not, e.g. during exploratory surveys, specify "Not
+          applicable".
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetHabitatScope
+        examples:
+          - value: coralligenous
+          - value:
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetHabitatScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      standardTargetHabitatScope:
+        alias: Standard Target Habitat Scope
+        description: >-
+          The habitat targeted for sampling during the dwc:Event defined according to the
+          asmr:habitatClassificationScheme.
+        comments: >-
+          Recommended best practice is to separate the values in a list with space vertical bar space ( | ).
+          If the standardTargetHabitatScope was sourced from a controlled vocabulary, provide the label followed
+          by the identifier between square brackets. If no specific habitat was targeted, e.g. during exploratory
+          surveys, specify "Not applicable".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: '[Mytilus edulis] beds on littoral sediments [http://eunis.eea.europa.eu/eunishabitats/A2.721]'
+          - value: Baltic aphotic hard clay [http://vocab.nerc.ac.uk/collection/M23/current/AB-B/]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      excludedHabitatScope:
+        alias: Excluded Habitat Scope
+        description: The habitats explicitly excluded from sampling during the dwc:Event.
+        comments: >-
+          Recommended best practice is to define the explic excluded habitat(s) according to the classification scheme
+          specified in asmr:habitatClassificationScheme and to separate the values in a list with space vertical bar
+          space ( | ). If the standardTargetHabitatScope was sourced from a controlled vocabulary,
+          provide the label followed by the identifier between square brackets. If no specific habitat was excluded,
+          e.g. during exploratory surveys, specify "Not applicable".
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedHabitatScope
+        examples:
+          - value: Deep-sea sand [http://eunis.eea.europa.eu/eunishabitats/A6.3]
+          - value: Coralligenous cliff with no gorgonians
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedHabitatScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      substrateScope:
+        alias: Substrate Scope
+        description: >-
+          The substrate type targeted for sampling during the dwc:Event
+        comments: >-
+          Recommended best practice is to define the targeted substrate(s) according to the classification
+          scheme specified in asmr:substrateClassificationScheme and to separate the values in a list with space
+          vertical bar space ( | ). If the substrateScope was sourced from a controlled vocabulary,
+          provide the label followed by the identifier between square brackets. If no specific substrate was targeted,
+          e.g. during exploratory surveys, specify "Not applicable".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples: []
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      excludedSubstrateScope:
+        alias: Excluded Substrate Scope
+        description: >-
+          The substrate(s) explicitly excluded from sampling during the dwc:Event defined according to the
+          asmr:substrateClassificationScheme.
+        comments: >-
+          Recommended best practice is to define the targeted substrate(s) according to the classification
+          scheme specified in asmr:substrateClassificationScheme and to separate the values in a list with space
+          vertical bar space ( | ). If the excludedSubstrateScope was sourced from a controlled vocabulary,
+          provide the label followed by the identifier between square brackets. If no specific substrate was excluded,
+          e.g. during exploratory surveys, specify "Not applicable".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: soft
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      targetTaxonomicScope:
+        alias: Target Taxonomic Scope
+        description: The taxonomic group(s) targeted for sampling during the dwc:Event.
+        comments: >-
+          This term is meant to alert users to the presence of non-target taxa (in some disciplines called 'bycatch')
+          reported in this dwc:Event. This term is relevant only if a target taxonomic scope is declared.
+          Taxonomic scope is based on the combination of eco:targetTaxonomicScope and eco:excludedTaxonomicScope.
+          Examination of the taxonomic scope is needed in order to identify the non-target taxa.
+          It should be possible to confirm the expectations by investigating the dwc:Occurrences in this dwc:Event and
+          in its child dwc:Events (if available) or by exploring eco:nonTargetTaxa for this dwc:Event (if populated).
+          The value of this term should be 'true' if dwc:Occurrences of taxa outside the taxonomic scope as defined at
+          the time of the dwc:Event are reported, otherwise the value of this term should be 'false'.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetTaxonomicScope
+        examples:
+          - value: Porifera
+          - value: Acropora | Seriatopora
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetTaxonomicScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      excludedTaxonomicScope:
+        alias: Excluded Taxonomic Scope
+        description: The taxonomic group(s) explicitly excluded from sampling during the dwc:Event.
+        comments: >-
+          The dwc:Event to which the eco:excludedTaxonomicScope refers could be at any level of hierarchy.
+          In the case of a higher level (parent) dwc:Event, include all the taxonomic groups explicitly excluded from
+          the child dwc:Events that contributed to the parent dwc:Event.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedTaxonomicScope
+        examples:
+          - value: Crustacea | Echinodermata
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedTaxonomicScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      taxonCompletenessReported:
+        alias: Taxon Completeness Reported
+        description: Statement about whether the taxonomic completeness of the dwc:Event was assessed.
+        comments: >-
+          This term is meant to alert users that the inventory was conducted in such a way that all of the target
+          taxa (the combination of eco:targetTaxonomicScope and eco:excludedTaxonomicScope) should have been detectable
+          if they were present during the dwc:Event. This term can provide data users with a qualitative measure of
+          how comprehensively an area has been surveyed, which assists in interpreting species populations, areas of
+          occupancy, inferring species absences, etc. This term is only relevant if the dwc:Event used restricted
+          search or open search methods. If taxonomic completeness was assessed, the methods used or an explanation
+          of the basis of the completeness should be stated in eco:taxonCompletenessProtocols.
+          Recommended best practice is to use controlled value strings from the controlled vocabulary designated
+          for use with this term, listed at http://rs.tdwg.org/dwc/doc/tcr/.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/taxonCompletenessReported
+        examples:
+          - value: notReported
+          - value: reportedIncomplete
+          - value: reportedComplete
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/taxonCompletenessReported
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      isTaxonomicScopeFullyReported:
+        alias: Is Taxonomic Scope Fully Reported
+        description: >-
+          Every dwc:Organism that was included within the taxonomic scope, and was detected during the dwc:Event,
+          was reported.
+        comments: >-
+          This term is only relevant if the dwc:Event used restricted search or open search methods.
+          If all dwc:Organisms included within the taxonomic scope and detected during the dwc:Event were reported,
+          the value should be 'true'.
+          Taxonomic scope is based on the combination of eco:targetTaxonomicScope and eco:excludedTaxonomicScope.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isTaxonomicScopeFullyReported
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isTaxonomicScopeFullyReported
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      isAbsenceReported:
+        alias: Is Absence Reported
+        description: Taxonomic absences were reported.
+        comments: Absences can be reported at any taxonomic level.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isAbsenceReported
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isAbsenceReported
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      absentTaxa:
+        alias: Absent Taxa
+        description: >-
+          A list (concatenated and separated) of taxa reported absent during the dwc:Event.
+        comments: |-
+          Absences can be reported at any taxonomic level.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/absentTaxa
+        examples:
+          - value: Pinna nobilis
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/absentTaxa
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      hasNonTargetTaxa:
+        alias: Has Non-target Taxa
+        description: >-
+          One or more dwc:Organisms of taxa outside the target taxonomic scope (the combination of
+          eco:targetTaxonomicScope and eco:excludedTaxonomicScope) were detected and reported for this dwc:Event.
+        comments: >-
+          This term is meant to alert users to the presence of non-target taxa (in some disciplines called 'bycatch')
+          reported in this dwc:Event. This term is relevant only if a target taxonomic scope is declared.
+          Taxonomic scope is based on the combination of eco:targetTaxonomicScope and eco:excludedTaxonomicScope.
+          Examination of the taxonomic scope is needed in order to identify the non-target taxa.
+          It should be possible to confirm the expectations by investigating the dwc:Occurrences in this dwc:Event
+          and in its child dwc:Events (if available) or by exploring eco:nonTargetTaxa for this dwc:Event
+          (if populated). The value of this term should be 'true' if dwc:Occurrences of taxa outside the taxonomic
+          scope as defined at the time of the dwc:Event are reported, otherwise the value of this term should
+          be 'false'.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/hasNonTargetTaxa
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/hasNonTargetTaxa
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      nonTargetTaxa:
+        alias: Non-target Taxa
+        description: >-
+          A list (concatenated and separated) of taxa reported during the dwc:Event that are outside of the target
+          taxonomic scope (the combination of eco:targetTaxonomicScope and eco:excludedTaxonomicScope).
+        comments: >-
+          This term is meant to allow the full list of taxa that are considered outside of the taxonomic scope and
+          yet were reported in the dataset to be shared. This term is relevant only if a target taxonomic scope
+          is declared and eco:hasNonTargetTaxa is 'true'.
+          Taxonomic scope is based on the combination of eco:targetTaxonomicScope and eco:excludedTaxonomicScope.
+          Non-target taxa (in some disciplines called 'bycatch') can be reported at any taxonomic level.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/nonTargetTaxa
+        examples:
+          - value: true
+          - value: false
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/nonTargetTaxa
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      areNonTargetTaxaFullyReported:
+        alias: Are Non-target Taxa Fully Reported
+        description: >-
+          Every dwc:Organism that was outside of the target taxonomic scope (the combination of
+          eco:targetTaxonomicScope and eco:excludedTaxonomicScope) and detected during the dwc:Event, and that was
+          detectable using the given protocol (given in eco:protocolDescriptions and dwc:samplingProtocol),
+          was reported.
+        comments: >-
+          This term is meant to inform a user of the data whether there were non-target taxa that were
+          detected, but left unreported. This term is only relevant if the dwc:Event used restricted search or
+          open search methods and if a target taxonomic scope is declared. Taxonomic scope is based on the combination
+          of eco:targetTaxonomicScope and eco:excludedTaxonomicScope. Within dwc:Events that used either a restricted
+          search or an open search method and declared a taxonomic scope, if all dwc:Organisms that are not included
+          within the target taxonomic scope and that were detected during the dwc:Event were reported, the value of
+          this term should be 'true', otherwise the value of this term should be 'false'.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/areNonTargetTaxaFullyReported
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/areNonTargetTaxaFullyReported
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      targetLifeStageScope:
+        alias: Target Life Stage Scope
+        description: >-
+          The age classes or life stages of the dwc:Organisms targeted for sampling during the dwc:Event.
+        comments: >-
+          This term is defined based on dwciri:lifeStage (http://rs.tdwg.org/dwc/terms/iri/lifeStage).
+          Recommended best practice is to use an IRI from the same controlled vocabulary as for dwciri:lifeStage.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetLifeStageScope
+        examples:
+          - value: larva
+          - value: adult
+          - value: juvenile
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetLifeStageScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      excludedLifeStageScope:
+        alias: Excluded Life Stage Scope
+        description: >-
+          The age classes or life stages of the dwc:Organisms explicitly excluded from sampling during the dwc:Event.
+        comments: >-
+          This term is defined based on dwc:lifeStage (http://rs.tdwg.org/dwc/terms/lifeStage).
+          Recommended best practice is to use the same controlled vocabulary as for dwc:lifeStage and to separate
+          multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedLifeStageScope
+        range: string
+        example:
+          - value: juveniles
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedLifeStageScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      isLifeStageScopeFullyReported:
+        alias: Is Life Stage Scope Fully Reported
+        description: >-
+          Every dwc:Organism that was included within the life stage scope,
+          and was detected during the dwc:Event, was reported.
+        comments: >-
+          This term is only relevant if the dwc:Event used restricted search or open search methods.
+          If all dwc:Organisms included within the life stage scope and detected during the dwc:Event were reported,
+          the value should be 'true'.
+          Life stage scope is based on the combination of eco:targetLifeStageScope and eco:excludedLifeStageScope.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isLifeStageScopeFullyReported
+        range: boolean
+        examples:
+          - value: true
+          - value: false
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isLifeStageScopeFullyReported
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      targetDegreeOfEstablishmentScope:
+        alias: Target Degree of Establishment Scope
+        description: >-
+          The degrees of establishment of the dwc:Organisms targeted for sampling during the dwc:Event.
+        comments: >-
+          Recommended best practice is to use controlled value strings from the controlled vocabulary
+          (http://rs.tdwg.org/dwcdoe/) for dwc:degreeOfEstablishment. For details, refer to
+          https://doi.org/10.3897/biss.3.38084. Recommended best practice is to separate multiple values in a list
+          with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetDegreeOfEstablishmentScope
+        examples:
+          - value: native (category A) [http://rs.tdwg.org/dwcdoe/values/d001]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetDegreeOfEstablishmentScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      excludedDegreeOfEstablishmentScope:
+        alias: Excluded Degree of Establishment Scope
+        description: >-
+          The degrees of establishment of the dwc:Organisms explicitly excluded from sampling during the dwc:Event.
+        comments: >-
+          Recommended best practice is to use controlled value strings from the controlled vocabulary
+          (http://rs.tdwg.org/dwcdoe/) for dwc:degreeOfEstablishment. For details, refer to
+          https://doi.org/10.3897/biss.3.38084. Recommended best practice is to separate multiple values in a list
+          with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedDegreeOfEstablishmentScope
+        examples:
+          - value: native
+          - value: invasive
+          - value: widespreadInvasive
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedDegreeOfEstablishmentScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      isDegreeOfEstablishmentScopeFullyReported:
+        alias: Is Degree of Establishment Scope Fully Reported
+        description: >-
+          Every dwc:Organism that was included within the degree of establishment scope, and was detected during the
+          dwc:Event, was reported.
+        comments: >-
+          This term is only relevant if the dwc:Event used restricted search or open search methods.
+          If all dwc:Organisms included within the degree of establishment scope and detected during the dwc:Event were
+          reported, the value should be 'true'. Degree of establishment scope is based on the combination of
+          eco:targetDegreeOfEstablishmentScope and eco:excludedDegreeOfEstablishmentScope.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isDegreeOfEstablishmentScopeFullyReported
+        examples:
+          - value: false
+          - value: true
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isDegreeOfEstablishmentScopeFullyReported
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      targetGrowthFormScope:
+        alias: Target Growth Form Scope
+        description: >-
+          The growth forms or habits of the dwc:Organisms targeted for sampling during the dwc:Event.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary and separate multiple values in a list with space
+          vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/targetGrowthFormScope
+        examples:
+          - value: branching corals
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/targetGrowthFormScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      excludedGrowthFormScope:
+        alias: Excluded Growth Form Scope
+        description: >-
+          The growth forms or habits of the dwc:Organisms explicitly excluded from sampling during the dwc:Event.
+        comments: []
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/excludedGrowthFormScope
+        examples:
+          - value: encrusting
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedGrowthFormScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      isGrowthFormScopeFullyReported:
+        alias: Is Growth Form Scope Fully Reported
+        description: >-
+          Every dwc:Organism that was included within the growth form scope, and was detected during the dwc:Event,
+          was reported.
+        comments: >-
+          This term is only relevant if the dwc:Event used restricted search or open search methods.
+          If all dwc:Organisms included within the growth form scope and detected during the dwc:Event were reported,
+          the value should be 'true'. Growth form scope is based on the combination of eco:targetGrowthFormScope
+          and eco:excludedGrowthFormScope.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isGrowthFormScopeFullyReported
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isGrowthFormScopeFullyReported
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      targetMobilityScope:
+        alias: Target Mobility Scope
+        description: >-
+          The mobility of the dwc:Organisms targeted for sampling during the dwc:Event.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary providing the label followed by the identifier
+          between square brackets. Separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: asmr
+          slot_uri:
+            value: to_Create
+        examples:
+          - value: >-
+              Sessile [https://kos.lifewatch.eu/thesauri/traits/c_89d2fe88] | Sedentary
+              [https://kos.lifewatch.eu/thesauri/traits/c_6f7def29]
+          - value: Mobile [https://kos.lifewatch.eu/thesauri/traits/c_a548f05b]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings:
+          - PATO:PATO_0000004
+          - TRAITSTHES:traits/c_b3723eba
+        created_on: 2026-07-30
+        last_updated_on: 2026-07-30
+      excludedMobilityScope:
+        alias: Excluded Mobility Scope
+        description: >-
+          The mobility of the dwc:Organisms of the dwc:Organisms explicitly excluded from sampling during the dwc:Event.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary providing the label followed by the identifier
+          between square brackets. Separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: asmr
+          slot_uri:
+            value: to_Create
+        examples:
+          - value: >-
+              Sessile [https://kos.lifewatch.eu/thesauri/traits/c_89d2fe88] | Sedentary
+              [https://kos.lifewatch.eu/thesauri/traits/c_6f7def29] | Non-mobile
+              [https://kos.lifewatch.eu/thesauri/traits/c_ac726168]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/excludedGrowthFormScope
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings:
+          - PATO:PATO_0000004
+          - TRAITSTHES:traits/c_b3723eba
+        created_on: 2026-07-30
+        last_updated_on: 2026-07-30
+      isMobilityFullyReported:
+        alias: Is Mobility Scope Fully Reported
+        description: >-
+          Every dwc:Organism that was included within the mobility scope, and was detected during the dwc:Event,
+          was reported.
+        comments: >-
+          This term is only relevant if the dwc:Event used restricted search or open search methods.
+          If all dwc:Organisms included within the mobility and detected during the dwc:Event were reported,
+          the value should be 'true'. Mobility scope is based on the combination of asmr:targetMobilityScope
+          and asmr:excludedMobilityScope.
+        annotations:
+          source:
+            value: asmr
+          slot_uri:
+            value: to_Create
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - PATO:PATO_0000004
+          - TRAITSTHES:traits/c_b3723eba
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-30
+        last_updated_on: 2026-07-30
+      hasNonTargetOrganisms:
+        alias: Has Non-target Organisms
+        description: >-
+          One or more dwc:Organisms outside the target organismal scopes
+          (eco:targetDegreeOfEstablishmentScope, eco:targetGrowthFormScope, and eco:targetLifeStageScope)
+          were detected and reported for this dwc:Event.
+        comments: >-
+          This term is meant to alert users to the presence of non-target organisms (in some disciplines called
+          'bycatch') reported in this dwc:Event. This term is relevant only if a target organismal scope is declared.
+          Organismal scope is based on the combination of all of the following terms: eco:targetLifeStageScope,
+          eco:excludedLifeStageScope, eco:targetDegreeOfEstablishmentScope, eco:excludedDegreeOfEstablishmentScope,
+          eco:targetGrowthFormScope, and eco:excludedGrowthFormScope.
+          Examination of the organismal scope is needed in order to identify the non-target dwc:Organisms.
+          It should be possible to confirm the expectations by investigating the dwc:Occurrences in this dwc:Event
+          and in its child dwc:Events (if available). The value of this term should be 'true' if dwc:Occurrences of
+          dwc:Organisms outside the organismal scope(s) as defined at the time of the dwc:Event are reported,
+          otherwise the value of this term should be 'false'.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/hasNonTargetOrganisms
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/hasNonTargetOrganisms
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      taxonCompletenessProtocols:
+        alias: Taxon Completeness Protocols
+        description: >-
+          A description of or reference (publication, URL) to the methods used to determine
+          eco:taxonCompletenessReported.
+        comments: >-
+          This term allows users to determine how comprehensively an area has been sampled.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/taxonCompletenessProtocols
+        examples: []
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/taxonCompletenessProtocols
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  SamplingMaterials:
+    attributes:
+      samplingPlatform:
+        alias: Sampling Platform
+        description: >-
+          Physical person (diver/snorkeler/freediver) doing or device/machine used for fieldwork sampling /
+          sensing / observation.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary providing the label followed by the identifier
+          between square brackets. Separate multiple values in a list with space vertical bar space ( | ). Sampling
+          platforms include vessels, robotic platforms (AUVs, ROVs, ...), and humans (e.g. divers, snorkelers).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: research vessel [http://vocab.nerc.ac.uk/collection/L06/current/31/] |
+              Remotely Operated Vehicles [http://vocab.nerc.ac.uk/collection/P19/current/PLSR0339/]
+          - value: ROV | CCR
+          - value: Azores drift cam
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings:
+          - BODCParameterSemantic:S1800115/
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      samplingPlatformModel:
+        alias: Sampling Platform Model
+        description: >-
+          Model of the asmr:samplingPlatform used for fieldwork.
+        comments: Separate multiple values in a list with space vertical bar space ( | )
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: NIOZ RV Anna Weber-van Bosse | Ocean Robotics Njord ROV
+          - value: ReefScan™ CoralAUV
+          - value: Lungfish Orca V6
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings:
+          - BODCParameterUsage:NMSPPF01
+          - iFDOCore:#image-platform
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      divingGasMix:
+        alias: Diving Gas Mix
+        description: >-
+          Gas mix(es) used by divers during sampling
+        comments: >-
+          This term is relevant only if asmr:samplingPlatform included "open-circuit diver" or
+          "close-circuit rebreathers diver" or "semi-closed rebreathers diver". Separate multiple values in a
+          list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Bottom gas Trimix 21/35 | Decompression gas Oxygen 50
+          - value: Diluent Trimix 18/45 | Oxygen 100 | Bail-out 18/45 | Bail-out decompression gas Oxygen 50 |
+              Bail-out decompression gas Oxygen 100
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      underwaterPositioningSystem:
+        alias: Underwater Positioning System
+        description: >-
+          System for the tracking and navigation of underwater vehicles or divers by means of
+          acoustic distance and/or direction measurements, and subsequent position triangulation.
+        comments: If absent, fill 'no'.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Blueprint SeaTrac USBL Positioning System
+          - value: absent
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      imageScaleReference:
+        alias: Image Scale Reference
+        description: >-
+          Type of asmr:verbatimImageScaleReference system used to estimate sizes from picture / videos either
+          during navigation or during a posteriori analyses
+        comments: >-
+          If absent, fill with "no"
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        examples:
+          - value: 3D camera
+          - value: calibrated camera
+          - value: laser marker
+          - value: optical flow
+          - value: object of known size in frame
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings:
+          - iFDOCapture:#image-scale-reference
+        related_mappings:
+          - asmr:verbatimImageScaleReference
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimImageScaleReference:
+        alias: Verbatim Image Scale Reference
+        description: >-
+          Original textual description of the system used to estimate sizes from picture / videos
+          either during navigation or for a posteriori analyses
+        comments: []
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 2 green laser beams (OrcaTorch D560-GL) set 10 cm apart
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - asmr:imageScaleReference
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      lightSystem:
+        alias: Light System
+        description: >-
+          Models and number of the underwater light/flashes used during the dwc:event.
+        comments: Separate multiple values in a list with space vertical bar space ( | )
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 2 video lights Archon DM10 II
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings:
+          - iFDOCapture:#image-illumination
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      cameraSystem:
+        alias: Camera System
+        description: >-
+          Model of the camera(s) and their housing used for eco:protocolDescriptions.
+        comments: >-
+          Separate multiple values in a list with space vertical bar space ( | )
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Olympus Tough! TG6 with Isotta underwater housing
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - asmr:cameraOrientation
+        narrow_mappings:
+          - tern:DigitalCamera
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      batterySystem:
+        alias: Battery System
+        description: >-
+          Battery system that supplies energy to the sampling platform
+        comments: >-
+          Relevant only if needed for sampling platforms and their sensors.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples: []
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      sensor:
+        alias: Sensor
+        description: >-
+          Sensor(s) deployed during the dwc:event
+        comments: >-
+          This term should be used to specify the type of sensor(s) deployed during the dwc:event, more detailed
+          explanation such as sensor models and any customization should be specified in asmr:sensorModel.
+          Recommended best practice is to use a controlled vocabulary and separate multiple values in a
+          list with space vertical bar space ( | ). If no sensors is deployed, fill with "Not applicable".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: CTD | light sensors
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings:
+          - tern:Sensor
+          - DSInitiativeTypeCode:007
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      verbatimSensor:
+        alias: Verbatim Sensor
+        description: >-
+          Original textual description of the sensor(s) deployed during the dwc:event with relevant specification, e.g. model, settings,
+          and customization
+        comments: >-
+          This term should be used to specify the type of sensor(s) deployed during the dwc:event, more detailed
+          explanation such as sensor models and any customization should be specified in asmr:sensorModel.
+          Recommended best practice is to use a controlled vocabulary and separate multiple values in a
+          list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: HOBO TidbiT MX Temperature 400-ft Data Logger
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - asmr:sensorCalibration
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      bait:
+        alias: Bait
+        description: Bait equipped to the baited platform.
+        comments: >-
+          This term is relevant only for baited asmr:samplingPlatform, otherwise specify "no". MISSING VALUE
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: chopped European sardine Sardina pilchardus
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings:
+          - movebank:MVB000397/
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      baitQuantity:
+        alias: Bait Quantity
+        description: Quantity of the asmr:bait equipped to the baited platform
+        comments: Recommended best practice to express it in kg
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 1
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      manipulatorArms:
+        alias: Manipulator Arms
+        description: >-
+          Robotic tool mounted on sampling platforms that mimics a human arm allowing the operator(s) to interact
+          with the surrounding environment.
+        comments: >-
+          Specify if the sampling platform is equipped with manipulator arms for manipulative experiments
+          or sample collection.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      sampleContainer:
+        alias: Sample Container
+        description: >-
+          Sample container for collecting dwc:materialSamples used equipped to the asmr:samplingPlatform
+        comments: >-
+          If absent, set "No".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: voucher specimens container for ROVs
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      otherFaunaAttraction:
+        alias: Other Fauna Attraction
+        description: >-
+          Fauna attraction device/tool other than bait was equipped to the sampling platform.
+        comments: >-
+          If absent, fill with "No".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - iFDOCapture:#image-fauna-attraction
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      armLengthValue:
+        alias: Arm Length Value
+        description: >-
+          Baited platform arm length
+        comments: >-
+          This term is relevant only for baited asmr:samplingPlatform. The unit must be specified in asmr:armLengthUnit.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 3
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      armLengthUnit:
+        alias: Arm Length Unit
+        description: >-
+          Unit to express baited platform arm length
+        comments: >-
+          This term is relevant only for baited asmr:samplingPlatform and specifies the unit of asmr:armLengthValue.
+          Recommended best practice is to use SI units, derived units, or other non-SI units accepted for use within
+          the SI from a controlled vocabulary, e.g. QUDT Unit Vocabulary (http://qudt.org/vocab/unit/) and
+          to express it in meters.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: >-
+              qudtUnit:MIN
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      baitedPlatformCanisterModel:
+        alias: Baited Platform Canister Model
+        description: >-
+          Description and/or model of the canister of the baited platform
+        comments: >-
+          This term is only relevant if asmr:samplingPlatform is baited.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples: []
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  SamplingMethod:
+    attributes:
+      protocolNames:
+        alias: Protocol Names
+        description: >-
+          Categorical descriptive names for the methods used during the dwc:Event.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary and separate multiple values in a list with
+          space vertical bar space ( | ). Examples of controlled vocabularies include eLTER_CL
+          (http://vocabs.lter-europe.net/elter_cl), Environmental Thesaurus
+          (http://vocabs.lter-europe.net/EnvThes/20220). If no protocol can be reported, e.g. if
+          ASMR metadata table is being compiled for an incidental discovery, fill with "Not applicable".
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/protocolNames
+        examples:
+          - value: videotransect | photoquadrat
+          - value: Transect [https://w3id.org/tern/ontologies/tern/Transect]
+          - value: Mortality Rapid Assessment Method (MRAM)
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/protocolNames
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      protocolDescriptions:
+        alias: Protocol Descriptions
+        description: >-
+          A detailed description of the methods used during the dwc:Event.
+        comments: >-
+          This description should be associated with protocols provided in eco:protocolNames.
+          The description may include deviations from a protocol referred to in eco:protocolReferences.
+          Recommended good practice is to provide information about instruments used, calibration, etc.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+          If no protocol can be reported, e.g. if ASMR metadata table is being compiled for an incidental discovery,
+          fill with "Not applicable".
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/protocolDescriptions
+        examples: []
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/protocolDescriptions
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      protocolReferences:
+        alias: Protocol References
+        description: The references to the methods used during the dwc:Event.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/protocolReferences
+        example:
+          - value: >-
+              Monk J, Barrett N, Bridge T, Carroll A, Friedman A, Ierodiaconou D, Jordan A, Kendrick G, Lucieer V. 2020.
+              Marine sampling field manual for autonomous underwater vehicles (AUVs). In Field Manuals for Marine
+              Sampling to Monitor Australian Waters,Version 2. Przeslawski R, Foster S (Eds). National Environmental
+              Science Program (NESP). Accessible at:
+              https://auv-field-manual.github.io/files/Chapter-4_AUV_Field-Manual_V2.pdf
+          - value: >-
+              Figuerola-Ferrando, L., Linares, C., Zentner, Y., López-Sendino, P., & Garrabou, J. (2024).
+              Marine citizen science and the conservation of mediterranean corals: the relevance of training,
+              expert validation, and robust sampling protocols. Environmental Management, 73(3), 646-656.
+              https://doi.org/10.1007/s00267-023-01913-x
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/protocolReferences
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      validationProtocolDescription:
+        alias: Validation Protocol Description
+        description: >-
+          A detailed description of any validation protocol adopted to reduce biases at any step of the protocol, e.g.
+          measurement bias, observer bias, etc.
+        comments: []
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: >-
+              the footage was analyzed twice by two researchers and results were compared reaching
+              consensus on the ones here presented
+          - value: >-
+              automatic segmentation and annotation of seabed images was manually validated and, if needed, corrected
+              by experts
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      hasMaterialSamples:
+        alias: Has Material Samples
+        description: >-
+          Material samples were collected during the dwc:Event.
+        comments: []
+        annotations:
+          source:
+            value: Humboldt extension
+        examples:
+          - value: true
+        slot_uri: http://rs.tdwg.org/eco/terms/hasMaterialSamples
+        range: boolean
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/hasMaterialSamples
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      hasDigitalSamples:
+        alias: Has Digital Samples
+        description: >-
+          Digital samples were collected during the dwc:Event.
+        comments: []
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      sensorCalibration:
+        alias: Sensor Calibration
+        description: >-
+          Description of the protocol(s) adopted for sensor(s) calibration.
+          Refer to the manual / source if available.
+        comments: >-
+          This term is relevant only if sensor(s) are deployed during the dwc:event.
+          If more than one sensor is deployed, recommended best practice is to separate multiple values in a list
+          with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: >-
+              calibration was performed before each deployment following HOBO® MX Underwater PAR Data Logger
+              (MX2502) Manual|
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - asmr:sensor
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      fieldOfView:
+        alias: Field of View
+        description: >-
+          Field of view of the platform expressed in m^2.
+        comments: >-
+          This term is only relevant if area-based sampling units were adopted during the dwc:event, either by deploying
+          cameras or diver-based visual censuses.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 2
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings:
+          -iFDOCapture:#image-area-square-meters
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-08-01
+      samplingPlatformNavigationSpeedValue:
+        alias: Sampling Platform Navigation Speed Value
+        description: >-
+          Sampling platform navigation speed.
+        comments: >-
+          An asmr:samplingPlatformNavigationSpeedValue must have a corresponding
+          asmr:samplingPlatformNavigationSpeedUnit.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 3
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      samplingPlatformNavigationSpeedUnit:
+        alias: Sampling Platform Navigation Speed Unit
+        description: >-
+          The units associated with asmr:samplingPlatformNavigationSpeedValue
+        comments: >-
+          Recommended best practice is to use SI units, derived units, or other non-SI units accepted for use within
+          the SI from a controlled vocabulary, e.g. QUDT Unit Vocabulary (http://qudt.org/vocab/unit/),
+          and to express it in m/s.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - values: >-
+              qudtUnit:M-PER-SEC
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      cameraOrientation:
+        alias: Camera Orientation
+        description: >-
+          Inclination of the camera with respect to the substrate
+        comments: >-
+          Expressed in degrees, e.g. if perpendicular, fill with "90".
+        annotations:
+          source:
+            value: ASMR
+        examples:
+          - value: 45
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - iFDOCapture:#image-camera-yaw-degrees
+          - iFDOCapture:#image-camera-pitch-degrees
+          - iFDOCapture:#image-camera-roll-degrees
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+    inventoryTypes:
+      alias: Inventory Types
+      description: >-
+        The types of search processes used to conduct the inventory.
+      comments: >-
+        This term is only relevant if the dwc:Event represents an inventory, defined by Sica et al., 2026.
+        Recommended best practice is to use a controlled vocabulary.
+        Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+      annotations:
+        source:
+          value: Humboldt extension
+      slot_uri: http://rs.tdwg.org/eco/terms/inventoryTypes
+      examples:
+        - value: extended inventory
+        - value: elementary inventory
+      range: string
+      required: false
+      recommended: true
+      exact_mappings:
+        - http://rs.tdwg.org/eco/terms/inventoryTypes
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    isAbundanceReported:
+      alias: Is Abundance Reported
+      description: The number of dwc:Organisms collected or observed was reported.
+      comments: []
+      annotations:
+        source:
+          value: Humboldt extension
+      slot_uri: http://rs.tdwg.org/eco/terms/isAbundanceReported
+      range: boolean
+      examples:
+        - value: true
+        - value: false
+      required: false
+      recommended: true
+      exact_mappings:
+        - http://rs.tdwg.org/eco/terms/isAbundanceReported
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    isAbundanceCapReported:
+      alias: is Abundance Cap Reported
+      description: >-
+        A maximum number of dwc:Organisms was reported, as specified or restricted by the protocol used.
+      comments: >-
+        Values of abundance cap should be captured under the term eco:abundanceCap.
+      annotations:
+        source:
+          value: Humboldt extension
+      slot_uri: http://rs.tdwg.org/eco/terms/isAbundanceCapReported
+      examples:
+        - value: true
+        - value: false
+      range: boolean
+      required: false
+      recommended: true
+      exact_mappings:
+        - http://rs.tdwg.org/eco/terms/isAbundanceCapReported
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    abundanceCap:
+      alias: Abundance Cap
+      description: >-
+        The reported maximum number of dwc:Organisms.
+      comments: []
+      annotations:
+        source:
+          value: Humboldt extension
+      slot_uri: http://rs.tdwg.org/eco/terms/abundanceCap
+      examples:
+        - value: 143
+      range: decimal
+      required: false
+      recommended: true
+      exact_mappings:
+        - http://rs.tdwg.org/eco/terms/abundanceCap
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    isLeastSpecificTargetCategoryQuantityInclusive:
+      alias: Is Least Specific Target Category Quantity Inclusive
+      description: >-
+        The total detected quantity for a dwc:Taxon (including subcategories
+        thereof) in a dwc:Event is given explicitly in a single record (dwc:organismQuantity
+        value) for that dwc:Taxon.
+      comments: >-
+        Recommended values are 'true' and 'false'.
+        This term is only relevant if dwc:organismQuantity is a number. For a detailed explanation,
+        see http://rs.tdwg.org/dwc/doc/inclusive/.
+      annotations:
+        source:
+          value: Humboldt extension
+      slot_uri: http://rs.tdwg.org/eco/terms/isLeastSpecificTargetCategoryQuantityInclusive
+      examples:
+        - value: true
+        - value: false
+      range: boolean
+      required: false
+      recommended: true
+      exact_mappings:
+        - http://rs.tdwg.org/eco/terms/isLeastSpecificTargetCategoryQuantityInclusive
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+  SamplingEffort:
+    attributes:
+      samplingPerformedBy:
+        alias: Sampling Performed By
+        description: >-
+          A person, group, or organization responsible for recording the dwc:Event.
+        comments: >-
+          The sampling dwc:Event could be at any level of hierarchy.
+          In the case of a higher level (parent) dwc:Event, include all the organizations or people involved in the
+          child dwc:Events that contributed to the parent dwc:Event.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/samplingPerformedBy
+        examples: []
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/samplingPerformedBy
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-08-31
+      isSamplingEffortReported:
+        alias: Is Sampling Effort Reported
+        description: >-
+          The sampling effort associated with the dwc:Event was reported.
+        comments: >-
+          Typically values of effort would be captured under the terms eco:samplingEffortValue and
+          eco:samplingEffortUnit.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/isSamplingEffortReported
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/isSamplingEffortReported
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      samplingEffortValue:
+        alias: Sampling Effort Value
+        description: >-
+          The numeric value for the sampling effort expended during the dwc:Event.
+        comments: >-
+          This term is meant to capture the total sampling effort value.
+          To express details of how the effort was determined use eco:samplingEffortProtocol.
+          For compilations it is recommend not to infer effort. An eco:samplingEffortValue must have a corresponding
+          eco:samplingEffortUnit.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/samplingEffortValue
+        examples:
+          - value: 76
+        range: decimal
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/samplingEffortValue
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      samplingEffortUnit:
+        alias: Sampling Effort Unit
+        description: >-
+          The units associated with the eco:samplingEffortValue.
+        comments: >-
+          Recommended best practice is to use SI units, derived units, or other non-SI units accepted for use within
+          the SI from a controlled vocabulary, e.g. QUDT Unit Vocabulary (http://qudt.org/vocab/unit/).
+          Sampling unit can be expressed in terms of surface, e.g. for transects, or soaking time for stationary
+          platforms.
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/samplingEffortUnit
+        examples:
+          - value:
+              qudtUnit:MIN
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/samplingEffortUnit
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      samplingEffortProtocol:
+        alias: Sampling Effort Protocol
+        description: >-
+          A description of or reference (publication or URL) to the methods used to determine the sampling effort.
+        comments: >-
+          This description should be associated with the values reported in eco:samplingEffortValue
+          and eco:samplingEffortUnit. This is a specialization of eco:protocolDescriptions focused on effort,
+          distinct from the survey method. The effort relates to the intensity of sampling and therefore can
+          assist in interpreting estimates of completeness. If no sampling effort protocol can be reported, e.g. if
+          ASMR metadata table is being compiled for an incidental discovery, fill with "Not applicable".
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/samplingEffortProtocol
+        examples:
+          - value: >-
+              A single time-lapse set to shoot every 5 minutes deployed for a period of 15 days
+          - value: >-
+              Ten 50 cm x 50 cm recruitment slates fixed to the substrate for 6 months.
+        range: string
+        required: true
+        recommended: false
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/samplingEffortProtocol
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      excludedSamplingEffortUnit:
+        alias: Excluded Sampling Effort Unit
+        description: >-
+          eco:samplingEffortUnit excluded from analysis.
+        comments: >-
+          This term can provide information of the efficiency and intrinsic / extrinsic limitations of the
+          eco:samplingEffortProtocol.
+          Best recommended practice is to specify the number of excluded sampling effort units followed by the sampling
+          unit type (e.g. specimens, photos, water samples) and the percentage with respect to the total number of
+          sampling effort units between brackets.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - 18 photoquadrats (2% total)
+          - 76 specimens (%15 total)
+          - 2 water samples (20% total)
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - eco:samplingEffortUnit
+          - asmr:excludedSamplingEffortUnitRationale
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      excludedSamplingEffortUnitRationale:
+        alias: Excluded Sampling Effort Unit Rationale
+        description: >-
+          Criterion/criteria adopted to exclude any of the sampling effort unit from analysis
+        comments: >-
+          This term is relevant only if asmr:excludedSamplingEffortUnit is indicated.
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: specimens without head structures
+          - value: blurred frames | frames with no hard substrates
+          - value: improperly preserved samples
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - eco:samplingEffortUnit
+          - asmr:excludedSamplingEffortUnit
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+    totalAreaSampledValue:
+      alias: Total Area Sampled Value
+      description: >-
+        The numeric value for the total area surveyed during the dwc:Event.
+      comments: >-
+        If eco:geospatialScopeAreaValue and asmr:analyzedAreaValue are relevant, this area is always less than or equal to
+        the eco:geospatialScopeAreaValue and bigger or equal to the asmr:analyzedAreaValue. An
+        eco:totalAreaSampledValue must have a corresponding eco:totalAreaSampledUnit.
+      annotations:
+        source:
+          value: Humboldt extension
+      slot_uri: http://rs.tdwg.org/eco/terms/totalAreaSampledValue
+      examples:
+        - value: 124
+      range: string
+      required: true
+      recommended: false
+      exact_mappings:
+        - http://rs.tdwg.org/eco/terms/totalAreaSampledValue
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    totalAreaSampledUnit:
+      alias: Total Area Sampled Unit
+      description: >-
+        The units associated with eco:totalAreaSampledValue
+      comments: >-
+        Recommended best practice is to use SI units, derived units, or other non-SI units accepted for use within
+        the SI from a controlled vocabulary, e.g. QUDT Unit Vocabulary (http://qudt.org/vocab/unit/).
+      annotations:
+        source:
+          value: Humboldt extension
+      slot_uri: http://rs.tdwg.org/eco/terms/totalAreaSampledUnit
+      examples:
+        - values: >-
+            qudtUnit:M2
+      range: string
+      required: true
+      recommended: false
+      exact_mappings:
+        - http://rs.tdwg.org/eco/terms/totalAreaSampledUnit
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    analyzedAreaValue:
+      alias: Analyzed Area Value
+      description: >-
+        The numeric value of the area included for quantitative analysis
+        that can be equal to or a subset of the total area surveyed during the dwc:Event.
+      comments: >-
+        This term should be used to distinguish the sampled/surveyed area and possible subsamples actually included
+        in quantitative analyses, e.g. if eco:samplingEffortUnit correspond to 25 random frames taken along a
+        videotransect, then asmr:analyzedAreaValue corresponds to the total quadrats' area and
+        eco:totalAreaSampledValue to the area covered during the videotransect.
+        An asmr:analyzedAreaValue must have a corresponding asmr:analyzedAreaUnit.
+      annotations:
+        source:
+          value: ASMR
+        slot_uri:
+          value: to_create
+      examples:
+        - value: 100
+        - value: 125
+      range: decimal
+      required: false
+      recommended: true
+      exact_mappings: []
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    analyzedAreaUnit:
+      alias: Analyzed Area Unit
+      description: >-
+        The units associated with asmr:analyzedAreaValue
+      comments: >-
+        Recommended best practice is to use a controlled vocabulary. For units containing exponents, use characters
+        from the Unicode Latin-1 Supplement character set (hex 00B2 for squared and 00B3 for cubed).
+      annotations:
+        source:
+          value: ASMR
+        slot_uri:
+          value: to_create
+      examples:
+        - values: >-
+            qudtUnit:M2
+      range: string
+      required: false
+      recommended: true
+      exact_mappings: []
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    spatialReplicates:
+      alias: Spatial Replicates
+      description: >-
+        Boolean field to specify whether spatial replicates were included in the sampling design
+        (e.g. multiple transects or photoquadrats)
+      comments: >-
+        This term is only relevant when eco:samplingEffortUnit is a spatial unit (e.g. a transect / quadrat, etc.).
+      annotations:
+        source:
+          value: ASMR
+        slot_uri:
+          value: to_create
+      examples:
+        - value: true
+      range: string
+      required: false
+      recommended: true
+      exact_mappings: []
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    temporalReplicates:
+      alias: Temporal Replicates
+      description: >-
+        Boolean field to specify whether temporal replicates were included in the sampling design
+      comments: >-
+        The nature of the temporal replicates depends on the eco:samplingEffortUnit, for example they may consist of
+        multiple measurements during the same survey or to repeated surveys in time.
+      annotations:
+        source:
+          value: ASMR
+        slot_uri:
+          value: to_create
+      examples:
+        - value: true or false
+      range: boolean
+      required: false
+      recommended: true
+      exact_mappings: []
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    surveyedTime:
+      alias: Surveyed Time
+      description: >-
+        Time for samplingEffortUnit, e.g. navigation for time-based transect or soak time for stationary
+        sampling platforms) expressed in minutes
+      comments: []
+      annotations:
+        source:
+          value: ASMR
+        slot_uri:
+          value: to_create
+      examples:
+        - value: 90
+      range: decimal
+      required: false
+      recommended: true
+      exact_mappings: []
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+    analyzedTime:
+      alias: Analyzed Time
+      description: Time subset of asmr:surveyedTime that was included in descriptive
+        or quantitative analyses expressed in minutes.
+      annotations:
+        source:
+          value: ASMR
+        slot_uri:
+          value: to_create
+      examples:
+        - value: 40
+      range: decimal
+      required: false
+      recommended: true
+      exact_mappings: []
+      close_mappings: []
+      related_mappings: []
+      narrow_mappings: []
+      broad_mappings: []
+      created_on: 2026-07-28
+      last_updated_on: 2026-07-28
+  Safety:
+    attributes:
+      protocolSafetyRisks:
+        alias: Protocol Safety Risks
+        description: >-
+          Safety risks related to the protocol described in eco:protocolDescriptions
+        comments: >-
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value:
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - asmr:protocolSafetyMeasures
+        narrow_mappings: []
+        broad_mappings:
+          - obo:ICO_0000078
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      protocolSafetyMeasures:
+        alias: Protocol Safety Measures
+        description: >-
+          Any prevention measure against the risk specified in asmr:protocolSafetyRisks
+          associated with the sampling protocol described in eco:protocolDescriptions.
+        comments: >-
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples: []
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings:
+          - asmr:protocolSafetyRisks
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  CostAnalysis:
+    description: >-
+      Information describing the costs associated with implementation of the method.
+    comments: >-
+      Completion of this class is particularly relevant for methodological studies aiming to present innovative
+      sampling materials or protocol or to evaluate and compare the cost-effectiveness, logistical requirements,
+      and resource demands of fieldwork methods.
+    attributes:
+      costAnalysisDescriptions:
+        alias: Cost Analysis Descriptions
+        description: >-
+          Description of the protocol used to conduct the cost analysis.
+        comments: >-
+          Recommended best practice is to explain thoroughly the protocol, rationale and any relevant information to
+          understand how the cost analysis was conducted.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: >-
+              We analyzed the cost of restoring a population (100 m2) considering the travel from our institution (i.e.
+              100 km ca by car), transportation (boat rental), personnel and material expenses (except for diving
+              equipment), but not the long-term monitoring costs.
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-29
+      costAnalysisUnit:
+        alias: Cost Analysis Unit
+        description: >-
+          Unit for the cost analysis of the described eco:samplingEffortProtocol.
+        comments: >-
+          Depending of the eco:samplingEffortProtocol, asmr:costAnalysisUnit can correspond to the
+          eco:samplingEffortUnit, the cost to perform the eco:samplingEffortProtocol at one site or any other cost unit
+          considered sensible/practical for the cost analysis. Example may be surveying one site for a monitoring
+          program or restoring a surface unit / number of colony for a restoration project.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: cost per surveyed m^2
+          - value: cost per transplanted coral colony
+          - value: cost per surveyed site
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      costPerCostAnalysisUnitValue:
+        alias: Cost Per Cost Analysis Unit Value
+        description: >-
+          Financial cost per asmr:costAnalysisUnit expressed in asmr:costAnalysisCurrency
+        comments: []
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 1056
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      costAnalysisCurrency:
+        alias: Cost Analysis Currency
+        description: >-
+          Currency used to express asmr:costPerUnit, asmr:equipmentCostPerUnit,and asmr:personnelCostPerUnit.
+        comments: >-
+          Recommended best practice is to use the standard ISO 4217.
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: EUR 978
+          - value: IDR 360
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings:
+          - qudt:CurrencyUnit
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      personnelCostPerUnit:
+        alias: Personnel Cost Per Unit
+        description: >-
+          Personnel cost per unit as specified in asmr:costAnalysisUnit expressed in
+          asmr:costAnalysisCurrency
+        comments:
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 1050
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      materialCostPerUnit:
+        alias: Material Cost Per Unit
+        description: Material and equipment cost per unit as specified in asmr:costAnalysisUnit
+          expressed in asmr:costAnalysisCurrency.
+        comments: >-
+          This field encompasses both consumables (e.g. diving mixes) and services (e.g. boat rental) of any
+          equipment/material needed per asmr:costAnalysisCurrency
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: 7500
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  MaterialSamples:
+    description: >-
+      Information describing the material samples collected during the dwc:event if any.
+    comments: >-
+      Completion of this class is relevant only if asmr:hasMaterialSamples is TRUE
+    attributes:
+      materialSampleTypes:
+        alias: Material Sample Types
+        description: A list (concatenated and separated) of material sample types collected during the dwc:Event.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary and separate multiple values in a list with
+          space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/materialSampleTypes
+        examples:
+          - value: wholeOrganism
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/materialSampleTypes
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      hasVouchers:
+        alias: Has Vouchers
+        description: >-
+          Specimen vouchers were collected during the dwc:Event.
+        comments: []
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/hasVouchers
+        examples:
+          - value: true
+          - value: false
+        range: boolean
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/hasVouchers
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      voucherInstitutions:
+        alias: Voucher Institutions
+        description: >-
+          A list (concatenated and separated) of the names or acronyms of the institutions where vouchers collected
+          during the dwc:Event were deposited.
+        comments: >-
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: Humboldt extension
+        slot_uri: http://rs.tdwg.org/eco/terms/voucherInstitutions
+        examples:
+          - value: AMNH
+          - value: Zoological Collection of the University of Bologna
+        range: string
+        required: false
+        recommended: true
+        exact_mappings:
+          - http://rs.tdwg.org/eco/terms/voucherInstitutions
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      materialSampleReplicates:
+        alias: Material Sample Replicates
+        description: >-
+          The number of material samples replicates collected at each sampling point and/or for each experimental
+          treatment in the study.
+        comments: []
+        annotations:
+          source:
+            value: asmr
+          slot_uri:
+            value: to_Create
+        examples:
+          - value: 5
+        range: integer
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  DigitalSample:
+    description: >-
+      Information describing the digital samples collected during the dwc:event if any.
+    comments: >-
+      Completion of this class is relevant only if asmr:hasDigitalSamples is TRUE
+    attributes:
+      meanImageAreaSquareMeters:
+        alias: meanImageAreaSquareMeters
+        description: The footprint of the entire image in square meters
+        comments: >-
+          In the context of ASMR Metadata, this term applies to the all image dataset and must be filled with
+          the mean image area in square meters.
+        annotations:
+          source:
+            value: asmr
+        examples:
+          - value: 1
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings:
+          - iFDOCapture:#image-area-square-meters
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      image-resolution:
+        alias: Image Resolution
+        description: The footprint of the entire image in square meters
+        comments: []
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        examples: []
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      image-overlap-fraction:
+        alias: image overlap fraction
+        description: >-
+          The average overlap of two consecutive images i and j as the area images in both of the images (A_i * A_j)
+          divided by the total area images by the two images
+          (A_i + A_j - A_i * A_j): f = A_i * A_j / (A_i + A_j - A_i * A_j) -> 0 if no overlap.
+          1 if complete overlap
+        comments: []
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        examples: []
+        range: decimal
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      image-curation-protocol:
+        alias: Image Curation Protocol
+        description: >-
+          Details of image processing / curation applied. References required should be listed in
+          image-documentation-processing
+        comments: []
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        examples: []
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      image-annotation-labels:
+        alias: Image Annotation Labels
+        description: >-
+          All the labels used in the image-annotations.
+        comments: >-
+          Recommended best practice is to specify a human-readable name, an ID between square brackets (e.g.
+          AphiaID), and an optional description. Separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        examples: []
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings:
+          - iFDOContent:#image-annotation-labels
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      image-annotation-creators:
+        alias: Image Annotation Creators
+        description: >-
+          All the annotators, humans and machines, that created image-annotations.
+        comments: >-
+          Recommended best practice is to specify a human-readable name, an ID between square brackets (e.g.
+          ORCID), and an optional description. If automatic annotation was used, a) specify a human-readable name of the
+          algorithm, the version, persistent identifier if available, and add settings in the optional description; and
+          b) specify in optional description the role as validator of the human that revised automatic annotation.
+          Separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: IFDO
+          slot_uri:
+            value: NA
+        examples:
+          - Claudia Campanini [https://orcid.org/0000-0002-4242-5862]
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings:
+          - iFDOContent:#image-annotation-creators
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+  Parameters:
+    attributes:
+      inSituAbioticParametersCollected:
+        alias: in Situ Abiotic Parameters Collected
+        description: Abiotic parameters collected in situ during fieldwork.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary providing the label followed by the identifier
+          between square brackets and to separate multiple values in a list with space vertical bar space ( | ).
+          Controlled vocabularies with relevant terms include Environmental Thesaurus – Thesaurus for long term
+          ecological research, monitoring and experiments (https://doi.org/10.48373/0PWD-C575),
+          The Environment Ontology (ENVO, http://purl.obolibrary.org/obo/envo.owl), NERC Vocabulary Server
+          (NVS, https://vocab.nerc.ac.uk/search_nvs/). If no abiotic parameters were collected in situ, fill with "No".
+          If the compilation of the ASMR metadata table is *a posteriori* and dc:recordedBy has no information on the
+          original sampling activity, fill with "Not reported".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: >-
+              Dissolved Organic Matter [http://vocab.nerc.ac.uk/collection/C77/current/B06/] |
+              Turbidity of water in the water body by in-situ nephelometer
+              [http://vocab.nerc.ac.uk/collection/P01/current/NEPHIF01/]
+          - value: sediment granulometric fraction [http://vocabs.lter-europe.net/EnvThes/30113]
+          - value: Water temperature
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      inSituAbioticParametersAnalyzed:
+        alias: In Situ Abiotic Parameters Analyzed
+        description: >-
+          Abiotic parameters collected in situ during fieldwork and included in analyses
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary providing the label followed by the identifier
+          between square brackets and to separate multiple values in a list with space vertical bar space ( | ).
+          Controlled vocabularies with relevant terms include Environmental Thesaurus – Thesaurus for long term
+          ecological research, monitoring and experiments (https://doi.org/10.48373/0PWD-C575),
+          The Environment Ontology (ENVO, http://purl.obolibrary.org/obo/envo.owl), NERC Vocabulary Server
+          (NVS, https://vocab.nerc.ac.uk/search_nvs/). If no abiotic parameters were collected in situ and included
+          in analyses, fill with "No".
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Dissolved Organic Matter [http://vocab.nerc.ac.uk/collection/C77/current/B06/]
+          - value: sediment granulometric fraction [http://vocabs.lter-europe.net/EnvThes/30113]
+          - value: Water temperature
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      exSituAbioticParametersAnalyzed:
+        alias: ex Situ Abiotic Parameters Analyzed
+        description: >-
+          Abiotic parameters collected ex situ and included in analyses
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary providing the label followed by the identifier
+          between square brackets and to separate multiple values in a list with space vertical bar space ( | ).
+          Controlled vocabularies with relevant terms include Environmental Thesaurus – Thesaurus for long term
+          ecological research, monitoring and experiments (https://doi.org/10.48373/0PWD-C575),
+          The Environment Ontology (ENVO, http://purl.obolibrary.org/obo/envo.owl), NERC Vocabulary Server
+          (NVS, https://vocab.nerc.ac.uk/search_nvs/).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: >-
+              Concentration of chlorophyll-a {chl-a CAS 479-61-8} per unit volume of the water body by synthesis
+              from multiple satellite sensors [http://vocab.nerc.ac.uk/collection/P01/current/CHLAMSAT/] |
+              Concentration of suspended particulate material (inorganic) per unit volume of the water body by
+              synthesis from multiple satellite sensors [http://vocab.nerc.ac.uk/collection/P01/current/SPMIMSAT/]
+          - value: Chlorophyll-a concentration | SST
+        range: string
+        required: false
+        recommended: true
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      bioEcoParameters:
+        alias: Biological and Ecological Parameters
+        description: >-
+          Biological and ecological parameters collected during dwc:event
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary providing the label followed by the identifier
+          between square brackets and to separate multiple values in a list with space vertical bar space ( | ).
+          Controlled vocabularies with relevant terms include Environmental Thesaurus – Thesaurus for long term
+          ecological research, monitoring and experiments (https://doi.org/10.48373/0PWD-C575),
+          The Environment Ontology (ENVO, http://purl.obolibrary.org/obo/envo.owl),
+          the Biodiversity Thesaurus (BIODIVTHES, http://data.loterre.fr/ark:/67375/BLH).
+        examples:
+          - value: colony density | colony height
+          - value: >-
+              seagrass presence [http://vocabs.lter-europe.net/EnvThes/60005] | seagrass biomass
+              [http://vocabs.lter-europe.net/EnvThes/600019]
+          - value: >-
+              alpha diversity [http://data.loterre.fr/ark:/67375/BLH-SXB2Q5MC-Z] |
+              beta diversity [http://data.loterre.fr/ark:/67375/BLH-GHNBPCZK-S] |  plastic pollution
+              [http://data.loterre.fr/ark:/67375/BLH-F1DJ72SD-6]
+          - value: >-
+              alpha diversity [http://purl.obolibrary.org/obo/PCO_0000074] |
+              marine anthropogenic litter [http://purl.obolibrary.org/obo/ENVO_06105107]
+          - value: EnvironmentalImpact [http://sweetontology.net/phenEnvirImpact/EnvironmentalImpact]
+        range: string
+        required: true
+        recommended: false
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      EssentialClimateVariables:
+        alias: ECVs
+        description: >-
+          An Essential Climate Variable is a physical, chemical or biological variable or a group of linked variables
+          that critically contributes to the characterisation of Earth' s climate.
+        comments: >-
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ). Access
+          ECVs list with explanations here
+          https://gcos.wmo.int/site/global-climate-observing-system-gcos/essential-climate-variables
+        annotations:
+          source:
+            value: ASMR
+          definition_source:
+            value: https://gcos.wmo.int/site/global-climate-observing-system-gcos/essential-climate-variables/about-essential-climate-variables
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Precipitation | Surface temperature
+          - value: Transient tracers
+        required: false
+        recommended: true
+        range: string
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      EssentialBiodiversityVariables:
+        alias: EBVs
+        description: >-
+          Essential Biodiversity Variables (EBVs) are a set of standardized biological measurements that help
+          scientists study, report and manage changes in biodiversity across time, space, and biological level -
+          https://geobon.org/ebvs/what-are-ebvs/
+        comments: >-
+          Recommended best practice is to separate multiple values in a list with space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Primary productivity
+          - value: Trait diversity | Taxonomic/phylogenetic diversity
+        required: false
+        recommended: true
+        range: string
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      EssentialOceanVariables:
+        alias: EOVs
+        description: >-
+          GOOS EOVs are defined as the minimum set of ocean variables that are needed to assess ocean
+          state and variability for important global ocean phenomena, and to provide essential data for
+          applications that support societal benefit. They are derived from sustained individual measurements,
+          or combinations of measurements, that can be undertaken at global scale and in a cost-effective manner.
+        comments: >-
+          Each EOVs has a specification fact sheet accessible here (https://goosocean.org/document-list/168) with the
+          explanation of its associated sub-variables, supporting variables, and derived products. This field can be
+          compiled with broader EOVs (e.g. Inorganic carbon) band/or sub-variables and/or supporting variables
+          and/or derived products.
+        annotations:
+          source:
+            value: ASMR
+          definition_source:
+            value: >-
+              Martín Míguez, Belén, et al. "GOOS Essential Ocean Variables: the backbone of a sustained and
+              evolving global ocean observing system." Frontiers in Marine Science 13 (2026): 1737002.
+          slot_uri:
+            value: to_create
+        examples:
+          - value: Sea-surface temperature (SST)
+          - value: Dissolved Inorganic Carbon (DIC) | Seagrass percent cover | Seagrass species composition
+        required: false
+        recommended: true
+        range: string
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      ecosystemServicesName:
+        alias: Ecosystem Services Name
+        description: >-
+          Benefits received by society thanks to the functioning of ecosystems.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary and to separate multiple values in a list with
+          space vertical bar space ( | ). If no controlled vocabulary is available, the use of a standard
+          classification scheme is recommended and should be specified in asmr:ecosystemServicesScheme.
+        annotations:
+          source:
+            value: ASMR
+          definition_source:
+            value: ICCD/COP(4)/INF.6 https://unterm.un.org/unterm2/en/view/c3f8ad51-2559-45d3-b925-7f9abefe55e4
+          slot_uri:
+            value: to_create
+        examples: []
+        required: false
+        recommended: true
+        range: string
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
+      ecosystemServicesScheme:
+        alias: Ecosystem Services Scheme
+        description: >-
+          Classification scheme of ecosystem services adopted to define asmr:ecosystemServicesName.
+        comments: >-
+          Recommended best practice is to use a controlled vocabulary and to separate multiple values in a list with
+          space vertical bar space ( | ).
+        annotations:
+          source:
+            value: ASMR
+          definition_source:
+            value: ICCD/COP(4)/INF.6 https://unterm.un.org/unterm2/en/view/c3f8ad51-2559-45d3-b925-7f9abefe55e4
+          slot_uri:
+            value: to_create
+        examples: []
+        required: false
+        recommended: true
+        range: string
+        exact_mappings: []
+        close_mappings: []
+        related_mappings: []
+        narrow_mappings: []
+        broad_mappings: []
+        created_on: 2026-07-28
+        last_updated_on: 2026-07-28
