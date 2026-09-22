@@ -1,0 +1,1 @@
+eventID	parentEventID	image-area-square-meters	image-resolution	image-overlap-fraction	image-curation-protocol	image-annotation-labels	image-annotation-creators

@@ -1,0 +1,14 @@
+eventID	parentEventID	locationID	verbatimLocality	locality	decimalLongitude	decimalLatitude	verbatimLongitude	verbatimLatitude	verbatimCoordinateSystem	verbatimSRS	footprintWKT	verbatimSiteDescriptions	verbatimSiteNames	siteCount	siteNestingDescription	country	countryCode	ecoregionScheme	ecoregionName	ecoregionID	geographicFeature	marineZone	verbatimGeomorphologicalContext	physiographicContext	morphologicalContext	geomorphologicalContext	verbatimHabitat	habitat	habitatClassificationScheme	verbatimLithology	lithology	verbatimSubstrate	substrate	substrateOrigin	substrateClassificationScheme	verbatimConservationMeasure	areaBasedProtectionMeasure	areaBasedProtectionLevelValue	areaBasedProtectionLevelScheme
+																																							
+																																							
+																																							
+																																							
+																																							
+																																							
+																																							
+																																							
+																																							
+																																							
+																																							
+																																							
+																																							

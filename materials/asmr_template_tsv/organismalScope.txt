@@ -1,0 +1,26 @@
+eventID	parentEventID	targetLifeStageScope	excludedLifeStageScope	isLifeStageScopeFullyReported	targetDegreeOfEstablishmentScope	excludedDegreeOfEstablishmentScope	isDegreeOfEstablishmentScopeFullyReported	targetGrowthFormScope	excludedGrowthFormScope	isGrowthFormScopeFullyReported	hasNonTargetOrganisms	targetMobilityScope	excludedMobilityScope	isMobilityFullyReported
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+						organis								
