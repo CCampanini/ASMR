@@ -3,7 +3,7 @@
 *Claudia Campanini, Martina Coppari, Cristina Gioia Di Camillo, Torcuato Pulido Mantas, Camilla Roveta, Daniel Gómez-Gras, and Carlo Cerrano*
 
 ## 🎯 ASMR AIM
-Adaptable Standardized Methods Reporting (ASMR) for marine fieldowork **is being developed** to provide researchers and stakeholders with tools to improve fieldwork methods reporting and contribute to the standardization of fieldwork metadata. In particular, ASMR aims to grant more granularity in fieldwork methods description within metadata, especially 1) sampling design, methods, and equipment; and 2) ecological context, e.g. habitat, substrate, geomorphology. 
+Adaptable Standardized Methods Reporting (ASMR) for marine fieldowork **is being developed** to provide researchers and stakeholders with tools to improve fieldwork methods reporting and contribute to the standardization of fieldwork metadata. In particular, ASMR aims to provide more granularity in fieldwork methods description within metadata, especially 1) sampling design, methods, and equipment; and 2) ecological context, e.g. habitat, substrate, geomorphology. 
 
 ## 🛠️ ASMR TOOLS
 - ASMR reporting checklist
@@ -16,7 +16,9 @@ Currently, terms describing the sampling equipment apply to visual-based marine 
 <img width="13333" height="7500" alt="ASMR_APPLICATIONS_DIAGRAM" src="https://github.com/user-attachments/assets/c1362933-37aa-4086-9f80-9bbe82f08ceb" />
 
 ## 👥🌍 COMMUNITY FEEDBACK & CONTRIBUTIONS
-Here, we present preliminary ASMR reporting checklist and term list. **Collaborations and community feedbacks** for its refinement and possible upgrades are welcome and can be submitted as [issues](https://github.com/CCampanini/ASMR/issues) or by email c.campanini@pm.univpm.it.
+Here, we present preliminary ASMR reporting checklist, schema and metadata template. Currently, we are in the validation phase.  
+**Collaborations and community feedbacks** for its refinement and possible upgrades are welcome and can be submitted as [issues](https://github.com/CCampanini/ASMR/issues) or by email c.campanini@pm.univpm.it.
+If you are a field practioner interested in testing it, send an email to c.campanini@pm.univpm.it 
 
 ## 🌊 USE STUDIES
 ASMR was tested by compiling the reporting checklist and metadata table *a posteriori* for 3 marine studies as [use cases](https://github.com/CCampanini/ASMR/tree/main/Use_cases)
