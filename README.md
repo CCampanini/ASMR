@@ -1,6 +1,6 @@
-# 🔍 Adaptable Standardized Methods Reporting (ASMR) for fieldwork studies
+# 🔍 Adaptable Standardized Methods Reporting (ASMR) for marine fieldwork studies
 
-*Claudia Campanini, Martina Coppari, Cristina Gioia Di Camillo, Torcuato Pulido Mantas, Camilla Roveta, Daniel Gómez-Gras, and Carlo Cerrano*
+*Claudia Campanini, Stephen Formel, Katrina Exter, Martina Coppari, Cristina Gioia Di Camillo, Torcuato Pulido Mantas, Camilla Roveta, Daniel Gómez-Gras, and Carlo Cerrano*
 
 ## 🎯 ASMR AIM
 Adaptable Standardized Methods Reporting (ASMR) for marine fieldowork **is being developed** to provide researchers and stakeholders with tools to improve fieldwork methods reporting and contribute to the standardization of fieldwork metadata. In particular, ASMR aims to provide more granularity in fieldwork methods description within metadata, especially 1) sampling design, methods, and equipment; and 2) ecological context, e.g. habitat, substrate, geomorphology. 
